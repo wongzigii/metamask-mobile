@@ -85,6 +85,7 @@ enum Sources {
   'web-mobile' = 'web-mobile',
   'nodejs' = 'nodejs',
   'unity' = 'unity',
+  'ios' = 'ios',
 }
 
 const parseSource = (source: string) => {

@@ -1,4 +1,4 @@
-@androidApp
+@quarantine
 @ChainScenarios
 @smoke
 

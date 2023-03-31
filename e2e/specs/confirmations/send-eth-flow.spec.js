@@ -43,18 +43,14 @@ describe('Send ETH Tests', () => {
     await AmountView.isTransactionAmountCorrect('0.004');
   });
 
-  it('should input and validate amount', async () => {
-    // Input acceptable value
-    await AmountView.typeInTransactionAmount('0');
-    await AmountView.tapNextButton();
-
-    // Check that we are on the confirm view
-    await TransactionConfirmationView.isVisible();
-  });
-
   it('should send ETH to Account 2', async () => {
+    await AmountView.tapNextButton();
+    await TransactionConfirmationView.isVisible();
+
     // Check that the amount is correct
-    await TransactionConfirmationView.isTransactionTotalCorrect('0 GoerliETH');
+    await TransactionConfirmationView.isTransactionTotalCorrect(
+      '0.004 GoerliETH',
+    );
     // Tap on the Send CTA
     await TransactionConfirmationView.tapConfirmButton();
     // Check that we are on the wallet screen

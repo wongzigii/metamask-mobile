@@ -1,16 +1,16 @@
 'use strict';
-import TestHelpers from '../helpers';
+import TestHelpers from '../../helpers';
 
-import WalletView from '../pages/WalletView';
-import DrawerView from '../pages/Drawer/DrawerView';
-import SettingsView from '../pages/Drawer/Settings/SettingsView';
-import NetworkView from '../pages/Drawer/Settings/NetworksView';
-import NetworkEducationModal from '../pages/modals/NetworkEducationModal';
-import AddCustomTokenView from '../pages/AddCustomTokenView';
-import SendView from '../pages/SendView';
-import AmountView from '../pages/AmountView';
-import { importWalletWithRecoveryPhrase } from '../viewHelper';
-import TransactionConfirmationView from '../pages/TransactionConfirmView';
+import WalletView from '../../pages/WalletView';
+import DrawerView from '../../pages/Drawer/DrawerView';
+import SettingsView from '../../pages/Drawer/Settings/SettingsView';
+import NetworkView from '../../pages/Drawer/Settings/NetworksView';
+import NetworkEducationModal from '../../pages/modals/NetworkEducationModal';
+import AddCustomTokenView from '../../pages/AddCustomTokenView';
+import SendView from '../../pages/SendView';
+import AmountView from '../../pages/AmountView';
+import { importWalletWithRecoveryPhrase } from '../../viewHelper';
+import TransactionConfirmationView from '../../pages/TransactionConfirmView';
 
 const AVAX_URL = 'https://api.avax-test.network/ext/C/rpc';
 const TOKEN_ADDRESS = '0x5425890298aed601595a70AB815c96711a31Bc65';
@@ -58,9 +58,7 @@ describe('Send ERC Token', () => {
     await AddCustomTokenView.tapTokenSymbolText();
     await TestHelpers.delay(1000);
     await AddCustomTokenView.tapTokenSymbolText();
-    await TestHelpers.swipeByText('Token Decimal', 'up', 'slow', 0.1);
-    await TestHelpers.delay(1000);
-    await TestHelpers.swipeByText('Token Decimal', 'up', 'slow', 0.1);
+    await AddCustomTokenView.scrollDownOnImportCustomTokens();
     await AddCustomTokenView.tapImportButton();
   });
 

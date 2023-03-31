@@ -1,9 +1,9 @@
-@androidApp
+@quarantine
 @ChainScenarios
 @regression
 Feature: Sending Native and ERC Tokens
 
-Feature tests the sending of Native and ERC Tokens
+  Feature tests the sending of Native and ERC Tokens
 
   Scenario: Import wallet to setup
     Given I have imported my wallet

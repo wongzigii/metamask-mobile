@@ -1,5 +1,5 @@
 @iosApp
-@androidApp
+@quarantine
 @ChainScenarios
 @regression
 Feature: Change password

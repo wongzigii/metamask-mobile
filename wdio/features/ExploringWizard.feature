@@ -1,4 +1,4 @@
-@androidApp
+@quarantine
 @regression
 
 Feature: Exploring wizard

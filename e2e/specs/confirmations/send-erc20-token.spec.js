@@ -58,7 +58,9 @@ describe('Send ERC Token', () => {
     await AddCustomTokenView.tapTokenSymbolText();
     await TestHelpers.delay(1000);
     await AddCustomTokenView.tapTokenSymbolText();
-    await AddCustomTokenView.scrollDownOnImportCustomTokens();
+    await TestHelpers.swipeByText('Token Decimal', 'up', 'slow', 0.1);
+    await TestHelpers.delay(1000);
+    await TestHelpers.swipeByText('Token Decimal', 'up', 'slow', 0.1);
     await AddCustomTokenView.tapImportButton();
   });
 

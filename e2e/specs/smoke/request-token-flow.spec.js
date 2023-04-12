@@ -1,25 +1,25 @@
 'use strict';
-import OnboardingView from '../pages/Onboarding/OnboardingView';
-import OnboardingCarouselView from '../pages/Onboarding/OnboardingCarouselView';
-import ProtectYourWalletView from '../pages/Onboarding/ProtectYourWalletView';
-import CreatePasswordView from '../pages/Onboarding/CreatePasswordView';
+import OnboardingView from '../../pages/Onboarding/OnboardingView';
+import OnboardingCarouselView from '../../pages/Onboarding/OnboardingCarouselView';
+import ProtectYourWalletView from '../../pages/Onboarding/ProtectYourWalletView';
+import CreatePasswordView from '../../pages/Onboarding/CreatePasswordView';
 
-import SendLinkView from '../pages/SendLinkView';
-import RequestPaymentView from '../pages/RequestPaymentView';
+import SendLinkView from '../../pages/SendLinkView';
+import RequestPaymentView from '../../pages/RequestPaymentView';
 
-import MetaMetricsOptIn from '../pages/Onboarding/MetaMetricsOptInView';
-import WalletView from '../pages/WalletView';
-import DrawerView from '../pages/Drawer/DrawerView';
-import EnableAutomaticSecurityChecksView from '../pages/EnableAutomaticSecurityChecksView';
+import MetaMetricsOptIn from '../../pages/Onboarding/MetaMetricsOptInView';
+import WalletView from '../../pages/WalletView';
+import DrawerView from '../../pages/Drawer/DrawerView';
+import EnableAutomaticSecurityChecksView from '../../pages/EnableAutomaticSecurityChecksView';
 
-import SkipAccountSecurityModal from '../pages/modals/SkipAccountSecurityModal';
-import OnboardingWizardModal from '../pages/modals/OnboardingWizardModal';
-import ProtectYourWalletModal from '../pages/modals/ProtectYourWalletModal';
-import RequestPaymentModal from '../pages/modals/RequestPaymentModal';
-import WhatsNewModal from '../pages/modals/WhatsNewModal';
+import SkipAccountSecurityModal from '../../pages/modals/SkipAccountSecurityModal';
+import OnboardingWizardModal from '../../pages/modals/OnboardingWizardModal';
+import ProtectYourWalletModal from '../../pages/modals/ProtectYourWalletModal';
+import RequestPaymentModal from '../../pages/modals/RequestPaymentModal';
+import WhatsNewModal from '../../pages/modals/WhatsNewModal';
 
-import TestHelpers from '../helpers';
-import { acceptTermOfUse } from '../viewHelper';
+import TestHelpers from '../../helpers';
+import { acceptTermOfUse } from '../../viewHelper';
 
 const SAI_CONTRACT_ADDRESS = '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359';
 const PASSWORD = '12345678';

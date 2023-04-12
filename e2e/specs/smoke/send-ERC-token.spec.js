@@ -1,16 +1,16 @@
 'use strict';
-import TestHelpers from '../helpers';
+import TestHelpers from '../../helpers';
 
-import WalletView from '../pages/WalletView';
-import DrawerView from '../pages/Drawer/DrawerView';
-import SettingsView from '../pages/Drawer/Settings/SettingsView';
-import NetworkView from '../pages/Drawer/Settings/NetworksView';
-import NetworkEducationModal from '../pages/modals/NetworkEducationModal';
-import AddCustomTokenView from '../pages/AddCustomTokenView';
-import SendView from '../pages/SendView';
-import AmountView from '../pages/AmountView';
-import { importWalletWithRecoveryPhrase } from '../viewHelper';
-import TransactionConfirmationView from '../pages/TransactionConfirmView';
+import WalletView from '../../pages/WalletView';
+import DrawerView from '../../pages/Drawer/DrawerView';
+import SettingsView from '../../pages/Drawer/Settings/SettingsView';
+import NetworkView from '../../pages/Drawer/Settings/NetworksView';
+import NetworkEducationModal from '../../pages/modals/NetworkEducationModal';
+import AddCustomTokenView from '../../pages/AddCustomTokenView';
+import SendView from '../../pages/SendView';
+import AmountView from '../../pages/AmountView';
+import { importWalletWithRecoveryPhrase } from '../../viewHelper';
+import TransactionConfirmationView from '../../pages/TransactionConfirmView';
 
 const AVAX_URL = 'https://api.avax-test.network/ext/C/rpc';
 const TOKEN_ADDRESS = '0x5425890298aed601595a70AB815c96711a31Bc65';
@@ -65,14 +65,14 @@ describe('Send ERC Token', () => {
   });
 
   it('should send token to address via Token Overview screen', async () => {
-    await WalletView.tapOnToken('AVAX'); // tapping burger menu
+    await WalletView.tapOnToken('USDC'); // tapping burger menu
     await WalletView.tapSendIcon();
     await SendView.inputAddress(SEND_ADDRESS);
     await TestHelpers.delay(1000);
     await SendView.tapNextButton();
     await AmountView.typeInTransactionAmount('0.000001');
     await AmountView.tapNextButton();
-    await TransactionConfirmationView.isAmountVisible('< 0.00001 AVAX');
+    await TransactionConfirmationView.isAmountVisible('< 0.00001 USDC');
     await TransactionConfirmationView.tapConfirmButton();
     TestHelpers.checkIfElementWithTextIsNotVisible('Transaction submitted');
   });

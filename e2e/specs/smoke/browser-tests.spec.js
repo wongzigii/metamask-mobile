@@ -1,29 +1,28 @@
 'use strict';
-import TestHelpers from '../helpers';
+import TestHelpers from '../../helpers';
 
-import OnboardingView from '../pages/Onboarding/OnboardingView';
-import OnboardingCarouselView from '../pages/Onboarding/OnboardingCarouselView';
-import ProtectYourWalletView from '../pages/Onboarding/ProtectYourWalletView';
-import CreatePasswordView from '../pages/Onboarding/CreatePasswordView';
+import OnboardingView from '../../pages/Onboarding/OnboardingView';
+import OnboardingCarouselView from '../../pages/Onboarding/OnboardingCarouselView';
+import ProtectYourWalletView from '../../pages/Onboarding/ProtectYourWalletView';
+import CreatePasswordView from '../../pages/Onboarding/CreatePasswordView';
 
-import MetaMetricsOptIn from '../pages/Onboarding/MetaMetricsOptInView';
-import WalletView from '../pages/WalletView';
-import Browser from '../pages/Drawer/Browser';
-import { BROWSER_SCREEN_ID } from '../../wdio/screen-objects/testIDs/BrowserScreen/BrowserScreen.testIds';
-import EnableAutomaticSecurityChecksView from '../pages/EnableAutomaticSecurityChecksView';
-import TabBarComponent from '../pages/TabBarComponent';
-import ConnectModal from '../pages/modals/ConnectModal';
-import SkipAccountSecurityModal from '../pages/modals/SkipAccountSecurityModal';
-import OnboardingWizardModal from '../pages/modals/OnboardingWizardModal';
-import ProtectYourWalletModal from '../pages/modals/ProtectYourWalletModal';
-import WhatsNewModal from '../pages/modals/WhatsNewModal';
-import { acceptTermOfUse } from '../viewHelper';
+import MetaMetricsOptIn from '../../pages/Onboarding/MetaMetricsOptInView';
+import WalletView from '../../pages/WalletView';
+import Browser from '../../pages/Drawer/Browser';
+import { BROWSER_SCREEN_ID } from '../../../wdio/screen-objects/testIDs/BrowserScreen/BrowserScreen.testIds';
+import EnableAutomaticSecurityChecksView from '../../pages/EnableAutomaticSecurityChecksView';
+import TabBarComponent from '../../pages/TabBarComponent';
+import ConnectModal from '../../pages/modals/ConnectModal';
+import SkipAccountSecurityModal from '../../pages/modals/SkipAccountSecurityModal';
+import OnboardingWizardModal from '../../pages/modals/OnboardingWizardModal';
+import ProtectYourWalletModal from '../../pages/modals/ProtectYourWalletModal';
+import WhatsNewModal from '../../pages/modals/WhatsNewModal';
+import { acceptTermOfUse } from '../../viewHelper';
 
 const ENS_Example = 'https://brunobarbieri.eth';
 const ENS_TLD = 'https://inbox.mailchain.xyz';
 const SUSHI_SWAP = 'https://app.sushi.com/swap';
 const PASSWORD = '12345678';
-const PHISHING_SITE = 'http://www.empowr.com/FanFeed/Home.aspx';
 const INVALID_URL = 'https://quackquakc.easq';
 
 describe('Browser Tests', () => {
@@ -201,19 +200,20 @@ describe('Browser Tests', () => {
     await Browser.isVisible();
   });
 
-  it('should test phishing sites', async () => {
-    await Browser.tapBottomSearchBar();
-    // Clear text & Navigate to URL
-    await Browser.navigateToURL(PHISHING_SITE);
-    await Browser.waitForBrowserPageToLoad();
+  // Disabling phishing detection test because the real phishing site we use for testing is down.
+  // it('should test phishing sites', async () => {
+  //   await Browser.tapBottomSearchBar();
+  //   // Clear text & Navigate to URL
+  //   await Browser.navigateToURL(PHISHING_SITE);
+  //   await Browser.waitForBrowserPageToLoad();
 
-    await Browser.isBackToSafetyButtonVisible();
-    await Browser.tapBackToSafetyButton();
+  //   await Browser.isBackToSafetyButtonVisible();
+  //   await Browser.tapBackToSafetyButton();
 
-    // Check that we are on the browser screen
-    if (!device.getPlatform() === 'android') {
-      await TestHelpers.delay(1500);
-    }
-    await Browser.isVisible();
-  });
+  //   // Check that we are on the browser screen
+  //   if (!device.getPlatform() === 'android') {
+  //     await TestHelpers.delay(1500);
+  //   }
+  //   await Browser.isVisible();
+  // });
 });

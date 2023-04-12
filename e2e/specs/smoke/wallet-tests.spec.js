@@ -1,20 +1,20 @@
 'use strict';
-import TestHelpers from '../helpers';
+import TestHelpers from '../../helpers';
 
-import WalletView from '../pages/WalletView';
-import AccountListView from '../pages/AccountListView';
-import ImportAccountView from '../pages/ImportAccountView';
+import WalletView from '../../pages/WalletView';
+import AccountListView from '../../pages/AccountListView';
+import ImportAccountView from '../../pages/ImportAccountView';
 
-import DrawerView from '../pages/Drawer/DrawerView';
+import DrawerView from '../../pages/Drawer/DrawerView';
 
-import AddCustomTokenView from '../pages/AddCustomTokenView';
-import ImportTokensView from '../pages/ImportTokensView';
+import AddCustomTokenView from '../../pages/AddCustomTokenView';
+import ImportTokensView from '../../pages/ImportTokensView';
 
-import NetworkListModal from '../pages/modals/NetworkListModal';
-import RequestPaymentModal from '../pages/modals/RequestPaymentModal';
-import NetworkEducationModal from '../pages/modals/NetworkEducationModal';
-import { importWalletWithRecoveryPhrase } from '../viewHelper';
-import Accounts from '../../wdio/helpers/Accounts';
+import NetworkListModal from '../../pages/modals/NetworkListModal';
+import RequestPaymentModal from '../../pages/modals/RequestPaymentModal';
+import NetworkEducationModal from '../../pages/modals/NetworkEducationModal';
+import { importWalletWithRecoveryPhrase } from '../../viewHelper';
+import Accounts from '../../../wdio/helpers/Accounts';
 
 describe('Wallet Tests', () => {
   const GOERLI = 'Goerli Test Network';

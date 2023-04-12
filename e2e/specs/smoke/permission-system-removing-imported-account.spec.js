@@ -1,27 +1,27 @@
 'use strict';
-import TestHelpers from '../helpers';
+import TestHelpers from '../../helpers';
 
-import WalletView from '../pages/WalletView';
-import ImportAccountView from '../pages/ImportAccountView';
-import TabBarComponent from '../pages/TabBarComponent';
-import TransactionConfirmationView from '../pages/TransactionConfirmView';
+import WalletView from '../../pages/WalletView';
+import ImportAccountView from '../../pages/ImportAccountView';
+import TabBarComponent from '../../pages/TabBarComponent';
+import TransactionConfirmationView from '../../pages/TransactionConfirmView';
 
-import Browser from '../pages/Drawer/Browser';
-import { BROWSER_SCREEN_ID } from '../../wdio/screen-objects/testIDs/BrowserScreen/BrowserScreen.testIds';
-import AccountListView from '../pages/AccountListView';
+import Browser from '../../pages/Drawer/Browser';
+import { BROWSER_SCREEN_ID } from '../../../wdio/screen-objects/testIDs/BrowserScreen/BrowserScreen.testIds';
+import AccountListView from '../../pages/AccountListView';
 
-import ConnectModal from '../pages/modals/ConnectModal';
-import ConnectedAccountsModal from '../pages/modals/ConnectedAccountsModal';
-import NetworkListModal from '../pages/modals/NetworkListModal';
-import NetworkEducationModal from '../pages/modals/NetworkEducationModal';
+import ConnectModal from '../../pages/modals/ConnectModal';
+import ConnectedAccountsModal from '../../pages/modals/ConnectedAccountsModal';
+import NetworkListModal from '../../pages/modals/NetworkListModal';
+import NetworkEducationModal from '../../pages/modals/NetworkEducationModal';
 
-import Accounts from '../../wdio/helpers/Accounts';
+import Accounts from '../../../wdio/helpers/Accounts';
 
 import {
   importWalletWithRecoveryPhrase,
   testDappConnectButtonCooridinates,
   testDappSendEIP1559ButtonCoordinates,
-} from '../viewHelper';
+} from '../../viewHelper';
 
 const TEST_DAPP = 'https://metamask.github.io/test-dapp/';
 const GOERLI = 'Goerli Test Network';

@@ -1,28 +1,28 @@
 'use strict';
 
-import TestHelpers from '../helpers';
+import TestHelpers from '../../helpers';
 
-import OnboardingView from '../pages/Onboarding/OnboardingView';
-import OnboardingCarouselView from '../pages/Onboarding/OnboardingCarouselView';
-import ImportWalletView from '../pages/Onboarding/ImportWalletView';
+import OnboardingView from '../../pages/Onboarding/OnboardingView';
+import OnboardingCarouselView from '../../pages/Onboarding/OnboardingCarouselView';
+import ImportWalletView from '../../pages/Onboarding/ImportWalletView';
 
-import MetaMetricsOptIn from '../pages/Onboarding/MetaMetricsOptInView';
-import WalletView from '../pages/WalletView';
-import LoginView from '../pages/LoginView';
+import MetaMetricsOptIn from '../../pages/Onboarding/MetaMetricsOptInView';
+import WalletView from '../../pages/WalletView';
+import LoginView from '../../pages/LoginView';
 
-import DrawerView from '../pages/Drawer/DrawerView';
+import DrawerView from '../../pages/Drawer/DrawerView';
 
-import SettingsView from '../pages/Drawer/Settings/SettingsView';
+import SettingsView from '../../pages/Drawer/Settings/SettingsView';
 
-import SecurityAndPrivacyView from '../pages/Drawer/Settings/SecurityAndPrivacy/SecurityAndPrivacyView';
-import ChangePasswordView from '../pages/Drawer/Settings/SecurityAndPrivacy/ChangePasswordView';
+import SecurityAndPrivacyView from '../../pages/Drawer/Settings/SecurityAndPrivacy/SecurityAndPrivacyView';
+import ChangePasswordView from '../../pages/Drawer/Settings/SecurityAndPrivacy/ChangePasswordView';
 
-import OnboardingWizardModal from '../pages/modals/OnboardingWizardModal';
-import DeleteWalletModal from '../pages/modals/DeleteWalletModal';
-import WhatsNewModal from '../pages/modals/WhatsNewModal';
-import EnableAutomaticSecurityChecksView from '../pages/EnableAutomaticSecurityChecksView';
-import { acceptTermOfUse } from '../viewHelper';
-import Accounts from '../../wdio/helpers/Accounts';
+import OnboardingWizardModal from '../../pages/modals/OnboardingWizardModal';
+import DeleteWalletModal from '../../pages/modals/DeleteWalletModal';
+import WhatsNewModal from '../../pages/modals/WhatsNewModal';
+import EnableAutomaticSecurityChecksView from '../../pages/EnableAutomaticSecurityChecksView';
+import { acceptTermOfUse } from '../../viewHelper';
+import Accounts from '../../../wdio/helpers/Accounts';
 
 describe('Import wallet with 24 word SRP, change password then delete wallet flow', () => {
   let validAccount;

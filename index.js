@@ -60,6 +60,8 @@ LogBox.ignoreLogs([
   'EventEmitter.removeListener',
   'Module TcpSockets requires main queue setup',
   'Module RCTSearchApiManager requires main queue setup',
+  'Warning: No DSN was provided. The Sentry SDK will be disabled. Native SDK will also not be initalized.',
+  'No DSN provided, backend will not do anything',
   'PushNotificationIOS has been extracted', // RNC PushNotification iOS issue - https://github.com/react-native-push-notification/ios/issues/43
 ]);
 

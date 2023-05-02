@@ -25,6 +25,8 @@ def getPassword(String currentUser, String keyChain) {
 }
 
 apply plugin: "com.android.application"
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-android-extensions'
 
 import com.android.build.OutputFile
 
@@ -274,7 +276,8 @@ dependencies {
 	implementation project(':lottie-react-native')
 
 	implementation project(':react-native-gesture-handler')
-
+  implementation 'androidx.core:core-ktx:1.7.0'
+  implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.7.0'
 	implementation 'androidx.multidex:multidex:2.0.1'
 	implementation 'androidx.annotation:annotation:1.1.0'
 	implementation 'androidx.appcompat:appcompat:1.2.0'

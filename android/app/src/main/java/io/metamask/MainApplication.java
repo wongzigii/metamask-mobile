@@ -18,7 +18,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import io.metamask.nativeModules.PreventScreenshotPackage;
 import android.webkit.WebView;
+import io.metamask.nativeModules.AndroidPackage;
 
+import androidx.multidex.BuildConfig;
 import androidx.multidex.MultiDexApplication;
 
 import android.database.CursorWindow;
@@ -43,6 +45,7 @@ public class MainApplication extends MultiDexApplication implements ShareApplica
 			packages.add(new RCTAnalyticsPackage());
 			packages.add(new PreventScreenshotPackage());
 			packages.add(new ReactVideoPackage());
+			packages.add(new AndroidPackage());
 
 			return packages;
 		}

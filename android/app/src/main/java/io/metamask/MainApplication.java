@@ -1,7 +1,7 @@
 package io.metamask;
 
 import com.facebook.react.ReactApplication;
-import com.cmcewen.blurview.BlurViewPackage;
+//import com.cmcewen.blurview.BlurViewPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import android.content.Context;
 import com.facebook.react.PackageList;

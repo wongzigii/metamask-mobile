@@ -176,19 +176,19 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
     }
 
     private fun pause(promise: Promise) {
-        Log.d(CommunicationClient.TAG, "Pausing")
+        Log.d(TAG, "Pausing")
         promise.resolve(unbindService())
     }
 
     private fun resume(promise: Promise) {
-        Log.d(CommunicationClient.TAG, "Resuming")
+        Log.d(TAG, "Resuming")
         if (!isServiceConnected) {
             bindService(promise)
         }
     }
 
     private fun disconnect(promise: Promise) {
-        Log.d(CommunicationClient.TAG, "Disconnecting")
+        Log.d(TAG, "Disconnecting")
         promise.resolve(unbindService())
     }
 
@@ -198,7 +198,7 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
     }
 
     private fun ping(promise: Promise) {
-        Log.d(CommunicationClient.TAG, "Ping")
+        Log.d(TAG, "Ping")
         try {
             val message = Bundle().apply {
                 val bundle = Bundle().apply {
@@ -224,12 +224,12 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
     }
 
     private fun getKeyInfo(promise: Promise) {
-        Log.d(CommunicationClient.TAG, "Getting key info...")
+        Log.d(TAG, "Getting key info...")
         promise.resolve(null)
     }
 
     private fun resetKeys(promise: Promise) {
-        Log.d(CommunicationClient.TAG, "Resetting keys...")
+        Log.d(TAG, "Resetting keys...")
         try {
             val message = Bundle().apply {
                 val bundle = Bundle().apply {

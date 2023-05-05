@@ -105,7 +105,6 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
         messageCallback?.onMessageReceived(message)
     }
 
-    @ReactMethod
     fun sendMessage(message: Bundle, promise: Promise) {
         Log.d(TAG, "Sending new message at ${timeNow()}")
         if (!isServiceConnected) {
@@ -129,11 +128,6 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
             promise.reject(e)
         }
     }
-
-    @ReactMethod
-    fun sayHello(promise: Promise) {
-        promise.resolve("Hello back to ya!")
-    }
 /*
  AndroidService
  */
@@ -153,6 +147,9 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
             }
             MessageType.RESET_KEYS -> {
                 resetKeys(promise)
+            }
+            MessageType.GET_KEY_INFO -> {
+              getKeyInfo(promise)
             }
             MessageType.PING -> {
                 ping(promise)
@@ -181,76 +178,79 @@ class CommunicationClient(reactContext: ReactApplicationContext) : ReactContextB
     }
 
     private fun resume(promise: Promise) {
-        Log.d(TAG, "Resuming")
-        if (!isServiceConnected) {
-            bindService(promise)
-        }
+      Log.d(TAG, "Resuming")
+      if (!isServiceConnected) {
+        bindService(promise)
+      }
     }
 
     private fun disconnect(promise: Promise) {
-        Log.d(TAG, "Disconnecting")
+      Log.d(TAG, "Disconnecting")
+      if (isServiceConnected) {
         promise.resolve(unbindService())
+      }
     }
 
     private fun isConnected(promise: Promise) {
-        Log.d(TAG, "isConnected $isServiceConnected")
-        promise.resolve(isServiceConnected)
+      Log.d(TAG, "isConnected $isServiceConnected")
+      promise.resolve(isServiceConnected)
     }
 
     private fun ping(promise: Promise) {
-        Log.d(TAG, "Ping")
-        try {
-            val message = Bundle().apply {
-                val bundle = Bundle().apply {
-                    putString(MESSAGE_TYPE, MessageType.PING.name)
-                }
-                putBundle(MESSAGE, bundle)
-            }
+      Log.d(TAG, "Ping")
+      try {
+          val message = Bundle().apply {
+              val bundle = Bundle().apply {
+                putString(MESSAGE_TYPE, MessageType.PING.name)
+              }
+              putBundle(MESSAGE, bundle)
+          }
 
-            val messageServiceCallback: IMessegeServiceCallback = object : IMessegeServiceCallback.Stub() {
-                override fun onMessageReceived(message: Bundle?) {
-                    Log.d(TAG, "Received ping response")
-                    promise.resolve(message)
-                }
-            }
+          val messageServiceCallback: IMessegeServiceCallback = object : IMessegeServiceCallback.Stub() {
+              override fun onMessageReceived(message: Bundle?) {
+                Log.d(TAG, "Received ping response")
+                promise.resolve(message)
+              }
+          }
 
-            messageService?.registerCallback(messageServiceCallback)
-            //messageService?.sendMessage(message)
-            messageServiceCallback?.onMessageReceived(message)
-        } catch (e: Exception) {
-            Log.e(TAG,"Could not convert message to Bundle: ${e.message}")
-            promise.reject(e)
-        }
+          messageService?.registerCallback(messageServiceCallback)
+          //messageService?.sendMessage(message)
+          messageServiceCallback?.onMessageReceived(message)
+      } catch (e: Exception) {
+          Log.e(TAG,"Could not convert message to Bundle: ${e.message}")
+          promise.reject(e)
+      }
     }
 
     private fun getKeyInfo(promise: Promise) {
-        Log.d(TAG, "Getting key info...")
-        promise.resolve(null)
+      Log.d(TAG, "Getting key info...")
+      promise.resolve(null)
     }
 
     private fun resetKeys(promise: Promise) {
-        Log.d(TAG, "Resetting keys...")
-        try {
-            val message = Bundle().apply {
-                val bundle = Bundle().apply {
-                    putString(MESSAGE_TYPE, MessageType.RESET_KEYS.name)
-                }
-                putBundle(MESSAGE, bundle)
-            }
-
-            val messageServiceCallback: IMessegeServiceCallback = object : IMessegeServiceCallback.Stub() {
-                override fun onMessageReceived(message: Bundle?) {
-                    Log.d(TAG, "Received resetKeys response")
-                    promise.resolve(message)
-                }
-            }
-
-            messageService?.registerCallback(messageServiceCallback)
-            //messageService?.sendMessage(message)
-            messageServiceCallback?.onMessageReceived(message)
-        } catch (e: Exception) {
-            Log.e(TAG,"Could not convert message to Bundle: ${e.message}")
-            promise.reject(e)
+      Log.d(TAG, "Resetting keys...")
+      try {
+        val message = Bundle().apply {
+          val bundle = Bundle().apply {
+            putString(MESSAGE_TYPE, MessageType.RESET_KEYS.name)
+          }
+          putBundle(MESSAGE, bundle)
         }
+
+        val messageServiceCallback: IMessegeServiceCallback =
+          object : IMessegeServiceCallback.Stub() {
+            override fun onMessageReceived(message: Bundle?) {
+              Log.d(TAG, "Received resetKeys response")
+              promise.resolve(message)
+            }
+          }
+
+        messageService?.registerCallback(messageServiceCallback)
+        //messageService?.sendMessage(message)
+        messageServiceCallback?.onMessageReceived(message)
+      } catch (e: Exception) {
+        Log.e(TAG, "Could not convert message to Bundle: ${e.message}")
+        promise.reject(e)
+      }
     }
 }

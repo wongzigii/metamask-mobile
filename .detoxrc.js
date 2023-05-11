@@ -42,7 +42,7 @@ module.exports = {
     'android.emulator': {
       type: 'android.emulator',
       device: {
-        avdName: 'Pixel_3_API_29',
+        avdName: 'Pixel_5_API_30',
       },
     },
   },
@@ -60,7 +60,7 @@ module.exports = {
     },
     'android.debug': {
       type: 'android.apk',
-      binaryPath: 'android/app/build/outputs/apk/prod/debug/app-prod-debug.apk',
+      binaryPath: 'android/app/build/outputs/apk/qa/debug/app-qa-debug.apk',
       build: 'yarn start:android:e2e',
     },
     'android.release': {

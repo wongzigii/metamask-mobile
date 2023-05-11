@@ -63,6 +63,10 @@ LogBox.ignoreLogs([
   'Module RCTSearchApiManager requires main queue setup',
   'Warning: No DSN was provided. The Sentry SDK will be disabled. Native SDK will also not be initalized.',
   'No DSN provided, backend will not do anything',
+  'ViewPropTypes will be removed from React Native, along with all other PropTypes. We recommend that you migrate away from PropTypes and switch to a type system like TypeScript',
+  'Module RCTSearchApiManager requires main queue setup since it overrides',
+  'No DSN provided, client will not do anything',
+  'Warning: No DSN was provided.',
   'PushNotificationIOS has been extracted', // RNC PushNotification iOS issue - https://github.com/react-native-push-notification/ios/issues/43
 ]);
 

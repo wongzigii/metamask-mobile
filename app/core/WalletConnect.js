@@ -14,13 +14,13 @@ import getRpcMethodMiddleware, {
   checkActiveAccountAndChainId,
   ApprovalTypes,
 } from './RPCMethods/RPCMethodMiddleware';
-import { Linking } from 'react-native';
-import Minimizer from 'react-native-minimizer';
+import { Linking, NativeModules } from 'react-native';
 import AppConstants from './AppConstants';
 import { strings } from '../../locales/i18n';
 import NotificationManager from './NotificationManager';
 import { msBetweenDates, msToHours } from '../util/date';
 import URL from 'url-parse';
+import Minimizer from '../util/minimizer';
 
 const hub = new EventEmitter();
 let connectors = [];
@@ -233,6 +233,8 @@ class WalletConnect {
   }
 
   redirect = () => {
+    const { GoBack } = NativeModules;
+
     if (this.requestOriginatedFrom === AppConstants.DEEPLINKS.ORIGIN_QR_CODE)
       return;
 

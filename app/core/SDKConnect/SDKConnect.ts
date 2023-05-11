@@ -8,8 +8,7 @@ import {
   TransactionController,
   WalletDevice,
 } from '@metamask/transaction-controller';
-import { AppState, NativeEventSubscription } from 'react-native';
-import Minimizer from 'react-native-minimizer';
+import { AppState, NativeEventSubscription, NativeModules } from 'react-native';
 import Device from '../../util/device';
 import BackgroundBridge from '../BackgroundBridge/BackgroundBridge';
 import Engine from '../Engine';
@@ -53,6 +52,7 @@ import {
 import { Json } from '@metamask/controller-utils';
 import { parseSource } from './utils/parseSource';
 import RPCQueueManager from './RPCQueueManager';
+import Minimizer from '../../util/minimizer';
 
 export const MIN_IN_MS = 1000 * 60;
 export const HOUR_IN_MS = MIN_IN_MS * 60;
@@ -637,6 +637,7 @@ export class Connection extends EventEmitter2 {
   }
 
   sendMessage(msg: any) {
+    const { GoBack } = NativeModules;
     const needsRedirect = this.requestsToRedirect[msg?.data?.id];
     this.remote.sendMessage(msg);
     this.setLoading(false);
@@ -653,7 +654,6 @@ export class Connection extends EventEmitter2 {
         // Skip, already went back.
         return;
       }
-
       Minimizer.goBack();
     });
   }

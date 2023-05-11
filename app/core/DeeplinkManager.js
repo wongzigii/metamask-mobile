@@ -2,7 +2,7 @@
 
 import URL from 'url-parse';
 import qs from 'qs';
-import { InteractionManager, Alert } from 'react-native';
+import { InteractionManager, Alert, NativeModules } from 'react-native';
 import { parse } from 'eth-url-parser';
 import WalletConnect from '../core/WalletConnect';
 import AppConstants from './AppConstants';
@@ -22,9 +22,10 @@ import {
 import { showAlert } from '../actions/alert';
 import SDKConnect from '../core/SDKConnect/SDKConnect';
 import Routes from '../constants/navigation/Routes';
-import Minimizer from 'react-native-minimizer';
 import { getAddress } from '../util/address';
-import { allowedToBuy } from '../components/UI/FiatOnRampAggregator';
+import { chainIdSelector, getRampNetworks } from '../reducers/fiatOrders';
+import { isNetworkBuySupported } from '../components/UI/FiatOnRampAggregator/utils';
+import Minimizer from '../util/minimizer';
 
 class DeeplinkManager {
   constructor({ navigation, frequentRpcList, dispatch, network }) {
@@ -188,10 +189,15 @@ class DeeplinkManager {
   }
 
   _handleBuyCrypto() {
-    // Do nothing for now if use is not in a supported network
-    if (allowedToBuy(this.network)) {
-      this.navigation.navigate(Routes.FIAT_ON_RAMP_AGGREGATOR.ID);
-    }
+    this.dispatch((_, getState) => {
+      const state = getState();
+      // Do nothing for now if use is not in a supported network
+      if (
+        isNetworkBuySupported(chainIdSelector(state), getRampNetworks(state))
+      ) {
+        this.navigation.navigate(Routes.FIAT_ON_RAMP_AGGREGATOR.ID);
+      }
+    });
   }
 
   parse(url, { browserCallBack, origin, onHandled }) {
@@ -221,7 +227,7 @@ class DeeplinkManager {
     const { MM_UNIVERSAL_LINK_HOST, MM_DEEP_ITMS_APP_LINK } = AppConstants;
     const DEEP_LINK_BASE = `${PROTOCOLS.HTTPS}://${MM_UNIVERSAL_LINK_HOST}`;
     const wcURL = params?.uri || urlObj.href;
-
+    const { GoBack } = NativeModules;
     switch (urlObj.protocol.replace(':', '')) {
       case PROTOCOLS.HTTP:
       case PROTOCOLS.HTTPS:

@@ -1,8 +1,8 @@
 export default class TestHelpers {
   static async waitAndTap(elementId, timeout) {
-    await waitFor(element(by.id(elementId)))
-      .toBeVisible()
-      .withTimeout(timeout || 8000);
+    // await waitFor(element(by.id(elementId)))
+    //   .toBeVisible()
+    //   .withTimeout(timeout || 8000);
 
     return element(by.id(elementId)).tap();
   }

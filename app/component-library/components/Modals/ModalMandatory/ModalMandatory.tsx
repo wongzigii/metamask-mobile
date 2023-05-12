@@ -143,7 +143,6 @@ const ModalMandatory = ({ route }: MandatoryModalProps) => {
       ]}
     >
       <ButtonIcon
-        {...generateTestId(Platform, TERMS_OF_USE_SCROLL_END_ARROW_BUTTON_ID)}
         testID={TERMS_OF_USE_SCROLL_END_ARROW_BUTTON_ID}
         onPress={scrollToEnd}
         iconName={IconName.ArrowDown}
@@ -219,7 +218,6 @@ const ModalMandatory = ({ route }: MandatoryModalProps) => {
       <View
         style={styles.modal}
         testID={containerTestId}
-        {...generateTestId(Platform, containerTestId)}
       >
         {renderHeader()}
         <View
@@ -232,7 +230,7 @@ const ModalMandatory = ({ route }: MandatoryModalProps) => {
           style={styles.checkboxContainer}
           onPress={handleSelect}
           activeOpacity={1}
-          {...generateTestId(Platform, TERMS_OF_USE_CHECKBOX_ICON_ID)}
+          testID={TERMS_OF_USE_CHECKBOX_ICON_ID}
         >
           <Checkbox onPress={handleSelect} isChecked={isCheckboxSelected} />
           <Text style={styles.checkboxText}>{checkboxText}</Text>

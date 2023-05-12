@@ -204,13 +204,7 @@ class OnboardingCarousel extends PureComponent {
             style={baseStyles.flexGrow}
             contentContainerStyle={styles.scroll}
           >
-            <View
-              style={styles.wrapper}
-              {...generateTestId(
-                Platform,
-                WELCOME_SCREEN_CAROUSEL_CONTAINER_ID,
-              )}
-            >
+            <View style={styles.wrapper}>
               <ScrollableTabView
                 style={styles.scrollTabs}
                 renderTabBar={this.renderTabBar}
@@ -221,13 +215,7 @@ class OnboardingCarousel extends PureComponent {
                   const imgStyleKey = `carouselImage${key}`;
                   return (
                     <View key={key} style={baseStyles.flexGrow}>
-                      <View
-                        style={styles.tab}
-                        {...generateTestId(
-                          Platform,
-                          WELCOME_SCREEN_CAROUSEL_TITLE_ID(key),
-                        )}
-                      >
+                      <View style={styles.tab}>
                         <Text style={styles.title}>
                           {strings(`onboarding_carousel.title${key}`)}
                         </Text>

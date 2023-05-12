@@ -491,10 +491,7 @@ class OptinMetrics extends PureComponent {
             </Text>
             <Text
               style={styles.content}
-              {...generateTestId(
-                Platform,
-                OPTIN_METRICS_PRIVACY_POLICY_DESCRIPTION_CONTENT_1_ID,
-              )}
+              testID="optin-metrics-privacy-policy-description"
             >
               {strings('privacy_policy.description_content_1')}
             </Text>

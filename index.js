@@ -60,6 +60,11 @@ LogBox.ignoreLogs([
   'new NativeEventEmitter', // New libraries have not yet implemented native methods to handle warnings (https://stackoverflow.com/questions/69538962/new-nativeeventemitter-was-called-with-a-non-null-argument-without-the-requir)
   'EventEmitter.removeListener',
   'Module TcpSockets requires main queue setup',
+  'No DSN provided, client will not do anything',
+  'ViewPropTypes will be removed from React Native',
+  'was called with a non-null',
+  'ReactImageView: Image source "null" ',
+  'No DSN was provided',
   'Module RCTSearchApiManager requires main queue setup',
   'PushNotificationIOS has been extracted', // RNC PushNotification iOS issue - https://github.com/react-native-push-notification/ios/issues/43
 ]);

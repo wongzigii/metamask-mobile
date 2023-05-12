@@ -234,6 +234,12 @@ android {
 }
 
 dependencies {
+    androidTestImplementation ('androidx.test.espresso:espresso-contrib:3.4.0')
+// androidTestImplementation ('androidx.test:runner:1.4.0')
+// androidTestImplementation ('androidx.test.espresso:espresso-core:3.4.0')
+  androidTestImplementation('com.wix:detox:+') {
+        exclude module: "protobuf-lite"
+    }
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")

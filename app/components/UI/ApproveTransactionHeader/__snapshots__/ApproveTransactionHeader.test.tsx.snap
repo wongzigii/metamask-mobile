@@ -365,9 +365,7 @@ exports[`ApproveTransactionHeader should render correctly 1`] = `
             }
           }
         >
-          NaN
-           
-          ETH
+          0
         </Text>
       </View>
     </View>

@@ -35,8 +35,7 @@ const ReadOnlyNetworkStorage = {
   async setItem(key, value) {
     try {
       // console.log('setting item', key);
-      // return await ReadOnlyNetworkStore.setState(value);
-      return;
+      return await ReadOnlyNetworkStore.setState(value);
     } catch (error) {
       Logger.error(error, { message: 'Failed to set item' });
     }
@@ -155,8 +154,9 @@ const persistConfig = {
     Logger.error(error, { message: 'Error persisting data' }),
 };
 
+const pReducer = persistReducer(persistConfig, rootReducer);
+
 let store, persistor;
-console.log('Migrating state if test build:', isTest);
 if (isTest) {
   const initializeStore = async () => {
     const state = await ReadOnlyNetworkStore.getState();
@@ -185,8 +185,6 @@ if (isTest) {
     persistor = result.persistor;
   });
 } else {
-  const pReducer = persistReducer(persistConfig, rootReducer);
-
   store = createStore(pReducer, undefined, applyMiddleware(thunk));
 
   persistor = persistStore(store, null, onPersistComplete(store));

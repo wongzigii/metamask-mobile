@@ -23,7 +23,6 @@ const isTest = process.env.IS_TEST === 'true';
 const ReadOnlyNetworkStorage = {
   async getItem(key) {
     try {
-      // console.log('getting item');
       const res = await ReadOnlyNetworkStore.getState();
       if (res) {
         return res;
@@ -34,7 +33,6 @@ const ReadOnlyNetworkStorage = {
   },
   async setItem(key, value) {
     try {
-      // console.log('setting item', key);
       return await ReadOnlyNetworkStore.setState(value);
     } catch (error) {
       Logger.error(error, { message: 'Failed to set item' });
@@ -171,10 +169,10 @@ if (isTest) {
       middlewares.push(createDebugger());
     }
 
-    const store = createStore(pReducer, undefined, applyMiddleware(thunk));
+    store = createStore(pReducer, undefined, applyMiddleware(thunk));
 
-    // Use pre loaded state from fixture
-    store.getState = () => state;
+    // Use preloaded state from fixture
+    if (state) store.getState = () => state;
     persistor = persistStore(store, null, onPersistComplete(store));
   })();
 } else {

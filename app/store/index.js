@@ -16,9 +16,9 @@ import EngineService from '../core/EngineService';
 import { Authentication } from '../core';
 import Device from '../util/device';
 import ReadOnlyNetworkStore from '../util/test/network-store';
+import { isTest } from '../util/test/utils';
 
 const TIMEOUT = 40000;
-const isTest = process.env.IS_TEST === 'true';
 
 const ReadOnlyNetworkStorage = {
   async getItem(key) {
@@ -156,28 +156,26 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 
 // eslint-disable-next-line import/no-mutable-exports
 let store, persistor;
-if (isTest) {
-  (async () => {
-    const state = await ReadOnlyNetworkStore.getState();
+const createStoreAndPersistor = async () => {
+  const state = isTest ? await ReadOnlyNetworkStore.getState() : undefined;
 
-    const pReducer = persistReducer(persistConfig, rootReducer);
+  const middlewares = [thunk];
 
-    const middlewares = [thunk];
+  if (__DEV__) {
+    const createDebugger = require('redux-flipper').default;
+    middlewares.push(createDebugger());
+  }
 
-    if (__DEV__) {
-      const createDebugger = require('redux-flipper').default;
-      middlewares.push(createDebugger());
-    }
-
-    store = createStore(pReducer, undefined, applyMiddleware(thunk));
-
-    // Use preloaded state from fixture
-    if (state) store.getState = () => state;
-    persistor = persistStore(store, null, onPersistComplete(store));
-  })();
-} else {
   store = createStore(pReducer, undefined, applyMiddleware(thunk));
+
+  // Use preloaded state from fixture
+  if (state) store.getState = () => state;
+
   persistor = persistStore(store, null, onPersistComplete(store));
-}
+};
+
+(async () => {
+  await createStoreAndPersistor();
+})();
 
 export { store, persistor };

@@ -319,7 +319,7 @@ workflows:
           inputs:
             - content: |-
                 #!/usr/bin/env bash
-                GIT_BRANCH=$BITRISE_GIT_BRANCH METAMASK_ENVIRONMENT='qa' yarn test:e2e:android:qa --testNamePattern='Smoke' --take-screenshots failing
+                GIT_BRANCH=$BITRISE_GIT_BRANCH METAMASK_ENVIRONMENT='qa' yarn test:e2e:android:qa e2e/specs/start-exploring.spec.js --take-screenshots failing
           title: Detox Build & Test
           is_always_run: false
       - custom-test-results-export@1:

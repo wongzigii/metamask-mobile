@@ -8,7 +8,6 @@ import React, {
 import { CommonActions, NavigationContainer } from '@react-navigation/native';
 import { Animated, Linking } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import Login from '../../Views/Login';
 import QRScanner from '../../Views/QRScanner';
 import Onboarding from '../../Views/Onboarding';
@@ -86,7 +85,7 @@ import EditAccountName from '../../Views/EditAccountName/EditAccountName';
 import WC2Manager, {
   isWC2Enabled,
 } from '../../../../app/core/WalletConnect/WalletConnectV2';
-import asyncStorageWrapper from '../../../store/async-storage-wrapper';
+import AsyncStorage from '../../../store/async-storage-wrapper';
 
 const clearStackNavigatorOptions = {
   headerShown: false,
@@ -238,7 +237,7 @@ const App = ({ userLoggedIn }) => {
     const appTriggeredAuth = async () => {
       const { PreferencesController } = Engine.context;
       const selectedAddress = PreferencesController.state.selectedAddress;
-      const existingUser = await asyncStorageWrapper.getItem(EXISTING_USER);
+      const existingUser = await AsyncStorage.getItem(EXISTING_USER);
       try {
         if (existingUser && selectedAddress) {
           await Authentication.appTriggeredAuth(selectedAddress);
@@ -367,7 +366,7 @@ const App = ({ userLoggedIn }) => {
 
   useEffect(() => {
     async function checkExisting() {
-      const existingUser = await asyncStorageWrapper.getItem(EXISTING_USER);
+      const existingUser = await AsyncStorage.getItem(EXISTING_USER);
       const route = !existingUser
         ? Routes.ONBOARDING.ROOT_NAV
         : Routes.ONBOARDING.LOGIN;
@@ -380,7 +379,7 @@ const App = ({ userLoggedIn }) => {
 
   useEffect(() => {
     async function startApp() {
-      const existingUser = await asyncStorageWrapper.getItem(EXISTING_USER);
+      const existingUser = await AsyncStorage.getItem(EXISTING_USER);
       try {
         const currentVersion = getVersion();
         const savedVersion = await AsyncStorage.getItem(CURRENT_APP_VERSION);

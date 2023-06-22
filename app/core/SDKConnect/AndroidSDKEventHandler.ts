@@ -13,12 +13,6 @@ class AndroidSDKEventHandler extends NativeEventEmitter {
     });
   }
 
-  onKeyInfo(callback) {
-    return this.addListener(EventType.KEY_INFO, (info) => {
-      callback(info);
-    });
-  }
-
   onClientsConnected(callback) {
     return this.addListener(EventType.CLIENTS_CONNECTED, (id) => {
       callback(id);
@@ -29,20 +23,6 @@ class AndroidSDKEventHandler extends NativeEventEmitter {
     return this.addListener(EventType.CLIENTS_DISCONNECTED, (id) => {
       callback(id);
     });
-  }
-
-  onClientsWaiting(callback) {
-    return this.addListener(EventType.CLIENTS_WAITING, (id) => {
-      callback(id);
-    });
-  }
-
-  onClientsReady(callback) {
-    return this.addListener(EventType.CLIENTS_READY, callback);
-  }
-
-  onKeysExchanged(callback) {
-    return this.addListener(EventType.KEYS_EXCHANGED, callback);
   }
 }
 

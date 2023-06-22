@@ -343,14 +343,10 @@ workflows:
           title: Set Env Path for caching deps
       - cocoapods-install@2:
           is_always_run: false
-      - script@1:
+      - yarn@0:
           inputs:
-            - content: |-
-                #!/usr/bin/env bash
-                node -v
-                yarn watch:clean
-          title: Start Watchman
-          is_always_run: false
+          - command: watch:clean
+          title: Yarn Watch
       - script@1:
           inputs:
             - content: |-

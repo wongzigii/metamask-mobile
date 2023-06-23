@@ -115,7 +115,7 @@ workflows:
       - git-clone@6: {}
       - nvm@1.3.0:
           inputs:
-            - node_version: '16.19.1'
+            - node_version: '16.13.0'
   code_setup:
     before_run:
       - setup
@@ -365,7 +365,7 @@ workflows:
             - content: |-
                 #!/usr/bin/env bash
                 node -v
-                osascript -e 'tell app "Terminal" to do script "cd /Users/vagrant/git/ && yarn watch"'
+                osascript -e 'tell app "Terminal" to do script "cd /Users/vagrant/git/ && asdf local nodejs 16.19.1 && yarn watch"'
                 exit 0
           title: Start Watchman
           is_always_run: false

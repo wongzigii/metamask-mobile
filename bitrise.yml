@@ -348,8 +348,7 @@ workflows:
             - content: |-
                 #!/usr/bin/env bash
                 node -v
-                osascript -e 'tell app "Terminal" to do script "cd /Users/vagrant/git/ && asdf local nodejs 16.19.1 && yarn watch"'
-                exit 0
+                cd /Users/vagrant/git/ && asdf local nodejs 16.19.1 && yarn watch
           title: Start Watchman
           is_always_run: false
       - script@1:

@@ -343,12 +343,25 @@ workflows:
           title: Set Env Path for caching deps
       - cocoapods-install@2:
           is_always_run: false
+      - script:
+          inputs:
+            - content: |-
+                brew install --cask iterm2
+          title: Install iTerm2
+          is_always_run: false
       - script@1:
           inputs:
             - content: |-
                 #!/usr/bin/env bash
                 node -v
-                sudo osascript -e 'tell app "Terminal" to do script "cd /Users/vagrant/git/ && asdf local nodejs 16.19.1 && yarn watch"'
+                osascript -e "
+                    tell application \"iTerm2\"
+                      set newWindow to (create window with default profile)
+                      tell current session of newWindow
+                          write text \"env \"
+                      end tell
+                    end tell
+                  "
                 exit 0
           title: Start Watchman
           is_always_run: false

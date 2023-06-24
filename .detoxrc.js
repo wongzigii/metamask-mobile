@@ -20,7 +20,7 @@ module.exports = {
       app: 'ios.release',
     },
     'android.emu.debug': {
-      device: 'android.emulator',
+      device: 'android.bitrise.emulator',
       app: 'android.debug',
     },
     'android.emu.release': {

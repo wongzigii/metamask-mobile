@@ -315,28 +315,10 @@ workflows:
           inputs:
             - source: $BITRISEIO_ANDROID_KEYSTORE_URL
             - destination: android/keystores/release.keystore
-       - script@1:
+      - yarn@0:
           inputs:
-            - content: |-
-                #!/usr/bin/env bash
-                node -v
-                osascript -e "
-                    tell application \"iTerm2\"
-                      set newWindow to (create window with default profile)
-                      tell current session of newWindow
-                          write text \"env \"
-                      end tell
-                    end tell
-                  "
-                exit 0
-          title: Start Watchman
-          is_always_run: false
-      - script@1:
-          inputs:
-            - content: |-
-                #!/usr/bin/env bash
-                node -v
-                yarn test:e2e:ios:debug --testNamePattern='Smoke'
+            - cache_local_deps: 'yes'
+            - command: test:e2e:android
           title: E2E Tests on Android
           is_always_run: false
   ios_e2e_test:
@@ -388,7 +370,7 @@ workflows:
             - content: |-
                 #!/usr/bin/env bash
                 node -v
-                yarn test:e2e:android:debug --testNamePattern='Smoke'
+                yarn test:e2e:ios:debug --testNamePattern='Smoke'
           title: Detox Build & Test
           is_always_run: false
       - custom-test-results-export@1:

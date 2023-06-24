@@ -11,7 +11,6 @@ import WalletActionsModal from '../pages/modals/WalletActionsModal';
 import AddAddressModal from '../pages/modals/AddAddressModal';
 
 import { CreateNewWallet } from '../viewHelper';
-import TestHelpers from '../helpers';
 
 const INVALID_ADDRESS = '0xB8B4EE5B1b693971eB60bDa15211570df2dB221L';
 const TETHER_ADDRESS = '0xdac17f958d2ee523a2206206994597c13d831ec7';
@@ -20,11 +19,10 @@ const MEMO = 'Test adding ENS';
 
 describe(Smoke('Addressbook Tests'), () => {
   beforeEach(() => {
-    jest.setTimeout(250000);
+    jest.setTimeout(150000);
   });
 
   it('should create new wallet', async () => {
-    await TestHelpers.delay(6000);
     await CreateNewWallet();
   });
 
@@ -37,8 +35,6 @@ describe(Smoke('Addressbook Tests'), () => {
 
   it('should show invalid address error message', async () => {
     await SendView.inputAddress(TETHER_ADDRESS); //Input token address to test for error
-    await TestHelpers.delay(6000);
-
     await SendView.incorrectAddressErrorMessageIsVisible();
     await SendView.removeAddress();
   });

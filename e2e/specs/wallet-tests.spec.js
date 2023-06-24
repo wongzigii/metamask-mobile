@@ -24,7 +24,6 @@ describe(Smoke('Wallet Tests'), () => {
   });
 
   it('should import wallet and go to the wallet view', async () => {
-    await TestHelpers.delay(6000);
     await importWalletWithRecoveryPhrase();
   });
 

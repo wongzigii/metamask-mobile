@@ -319,7 +319,16 @@ workflows:
           inputs:
             - content: |-
                 #!/usr/bin/env bash
-                GIT_BRANCH=$BITRISE_GIT_BRANCH METAMASK_ENVIRONMENT='qa' yarn test:e2e:android:qa --testNamePattern='Smoke' --take-screenshots failing
+                node -v
+                osascript -e 'tell app "Terminal" to do script "cd /Users/vagrant/git/ && asdf local nodejs 16.19.1 && yarn watch"'
+                exit 0
+          title: Start Watchman
+          is_always_run: false
+      - script@1:
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                yarn test:e2e:android:debug --testNamePattern='Smoke'
           title: Detox Build & Test
           is_always_run: false
       - custom-test-results-export@1:

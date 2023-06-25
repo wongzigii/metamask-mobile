@@ -1,6 +1,6 @@
 'use strict';
 import TestHelpers from '../helpers';
-import { Regression } from '../tags';
+import { Smoke } from '../tags';
 import Browser from '../pages/Drawer/Browser';
 import { BROWSER_SCREEN_ID } from '../../wdio/screen-objects/testIDs/BrowserScreen/BrowserScreen.testIds';
 import TabBarComponent from '../pages/TabBarComponent';
@@ -14,7 +14,7 @@ const SUSHI_SWAP = 'https://app.sushi.com/swap';
 const PHISHING_SITE = 'http://www.empowr.com/FanFeed/Home.aspx';
 const INVALID_URL = 'https://quackquakc.easq';
 
-describe(Regression('Browser Tests'), () => {
+describe(Smoke('Browser Tests'), () => {
   beforeEach(() => {
     jest.setTimeout(150000);
   });

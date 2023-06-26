@@ -110,6 +110,15 @@ workflows:
   # Code Setups
   setup:
     steps:
+      - script@1:
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                node -v
+                open -a Terminal "`pwd`"
+                exit 0
+          title: Start Watchman
+          is_always_run: false
       - activate-ssh-key@4:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@6: {}
@@ -342,28 +351,6 @@ workflows:
                 brew tap wix/brew
           title: Set Env Path for caching deps
       - cocoapods-install@2:
-          is_always_run: false
-      - script:
-          inputs:
-            - content: |-
-                brew install --cask iterm2
-          title: Install iTerm2
-          is_always_run: false
-      - script@1:
-          inputs:
-            - content: |-
-                #!/usr/bin/env bash
-                node -v
-                osascript -e "
-                    tell application \"iTerm2\"
-                      set newWindow to (create window with default profile)
-                      tell current session of newWindow
-                          write text \"env \"
-                      end tell
-                    end tell
-                  "
-                exit 0
-          title: Start Watchman
           is_always_run: false
       - script@1:
           inputs:

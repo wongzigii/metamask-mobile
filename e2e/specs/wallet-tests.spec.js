@@ -114,6 +114,8 @@ describe(Smoke('Wallet Tests'), () => {
   });
 
   it('should add a custom token', async () => {
+    await TestHelpers.delay(2500);
+
     await WalletView.tapImportTokensButton();
 
     await AddCustomTokenView.tapCustomTokenTab();

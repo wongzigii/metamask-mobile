@@ -110,15 +110,6 @@ workflows:
   # Code Setups
   setup:
     steps:
-      - script@1:
-          inputs:
-            - content: |-
-                #!/usr/bin/env bash
-                node -v
-                open -a Terminal "`pwd`"
-                exit 0
-          title: Start Watchman
-          is_always_run: false
       - activate-ssh-key@4:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@6: {}
@@ -357,7 +348,7 @@ workflows:
             - content: |-
                 #!/usr/bin/env bash
                 node -v
-                yarn test:e2e:ios:debug --testNamePattern='Smoke'
+                FORCE_BUNDLING=true yarn test:e2e:ios:debug --testNamePattern='Smoke'
           title: Detox Build & Test
           is_always_run: false
       - custom-test-results-export@1:

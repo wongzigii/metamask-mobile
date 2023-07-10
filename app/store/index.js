@@ -111,14 +111,6 @@ const persistUserTransform = createTransform(
   { whitelist: ['user'] },
 );
 
-/**
- * Initialize services after persist is completed
- */
-const onPersistComplete = (store) => {
-  EngineService.initalizeEngine(store);
-  Authentication.init(store);
-};
-
 const persistConfig = {
   key: 'root',
   version,
@@ -151,7 +143,15 @@ const createStoreAndPersistor = async () => {
   // Use preloaded state from fixture
   if (state) store.getState = () => state;
 
-  persistor = persistStore(store, null, onPersistComplete(store));
+  /**
+   * Initialize services after persist is completed
+   */
+  const onPersistComplete = () => {
+    EngineService.initalizeEngine(store);
+    Authentication.init(store);
+  };
+
+  persistor = persistStore(store, null, onPersistComplete);
 };
 
 (async () => {

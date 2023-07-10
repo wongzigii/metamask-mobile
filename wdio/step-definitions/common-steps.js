@@ -1,4 +1,4 @@
-import { Given, Then, When, Before, After } from '@wdio/cucumber-framework';
+import { Given, Then, When } from '@wdio/cucumber-framework';
 import Accounts from '../helpers/Accounts';
 import WelcomeScreen from '../screen-objects/Onboarding/OnboardingCarousel';
 import OnboardingScreen from '../screen-objects/Onboarding/OnboardingScreen';
@@ -13,9 +13,6 @@ import OnboardingWizardModal from '../screen-objects/Modals/OnboardingWizardModa
 import LoginScreen from '../screen-objects/LoginScreen';
 import TermOfUseScreen from '../screen-objects/Modals/TermOfUseScreen';
 import WhatsNewModal from '../screen-objects/Modals/WhatsNewModal';
-import { loadFixture, startFixtureServer, stopFixtureServer } from '../fixtures/fixture-helper';
-
-import FixtureBuilder from '../fixtures/fixture-builder';
 
 Then(/^the Welcome Screen is displayed$/, async () => {
   await WelcomeScreen.waitForScreenToDisplay();

@@ -140,7 +140,8 @@ const createStoreAndPersistor = async () => {
 
   store = createStore(pReducer, undefined, applyMiddleware(thunk));
 
-  // Use preloaded state from fixture
+  // If the 'state' variable obtained from ReadOnlyNetworkStore is defined, then overwrite
+  // the store's getState method to return this preloaded state. Only for E2E.
   if (state) store.getState = () => state;
 
   /**

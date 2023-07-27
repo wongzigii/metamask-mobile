@@ -138,7 +138,7 @@ const createStoreAndPersistor = async () => {
     middlewares.push(createDebugger());
   }
 
-  store = createStore(pReducer, undefined, applyMiddleware(thunk));
+  store = createStore(pReducer, undefined, applyMiddleware(...middlewares));
 
   // If the 'state' variable obtained from ReadOnlyNetworkStore is defined, then overwrite
   // the store's getState method to return this preloaded state. Only for E2E.

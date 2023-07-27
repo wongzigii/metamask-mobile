@@ -13,7 +13,12 @@ import Text, { TextVariant, TextColor } from '../../Texts/Text';
 import styleSheet from './MenuBody.styles';
 import { MenuBodyProps } from './MenuBody.types';
 
-const MenuBody: React.FC<MenuBodyProps> = ({ style, description, options }) => {
+const MenuBody: React.FC<MenuBodyProps> = ({
+  style,
+  description,
+  options,
+  isMultiSelect,
+}) => {
   const { styles } = useStyles(styleSheet, { style });
   const renderDescription = () => {
     return typeof description === 'string' ? (
@@ -27,8 +32,8 @@ const MenuBody: React.FC<MenuBodyProps> = ({ style, description, options }) => {
 
   return (
     <View style={styles.base}>
-      {description && renderDescription()}
-      <MenuOptions options={options} />
+      {description && <View>{renderDescription()}</View>}
+      <MenuOptions options={options} isMultiSelect={isMultiSelect} />
     </View>
   );
 };

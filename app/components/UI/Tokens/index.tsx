@@ -90,8 +90,7 @@ import {
 import { selectDetectedTokens } from '../../../selectors/tokensController';
 import { selectContractExchangeRates } from '../../../selectors/tokenRatesController';
 import { selectUseTokenDetection } from '../../../selectors/preferencesController';
-import SelectButton from '../../../component-library/components/Select/Select/SelectButton/SelectButton';
-import MenuOptions from '../../../component-library/components/Menu/MenuOptions/MenuOptions';
+import Select from '../../../component-library/components/Select/Select/Select';
 import { MenuOptionProps } from '../../../component-library/components/Menu/MenuOptions/MenuOption/MenuOption.types';
 
 const Tokens: React.FC<TokensI> = ({ tokens }) => {
@@ -536,18 +535,12 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
       style={styles.wrapper}
       {...generateTestId(Platform, MAIN_WALLET_VIEW_VIA_TOKENS_ID)}
     >
-      {tokens?.length ? renderList() : renderEmpty()}
-      <ActionSheet
-        ref={actionSheet}
-        title={strings('wallet.remove_token_title')}
-        options={[strings('wallet.remove'), strings('wallet.cancel')]}
-        cancelButtonIndex={1}
-        destructiveButtonIndex={0}
-        onPress={onActionSheetPress}
-        theme={themeAppearance}
+      <Select
+        label="label"
+        description="description"
+        options={options}
+        isMultiSelect
       />
-      <SelectButton label="label" description="description" />
-      <MenuOptions options={options} isMultiSelect />
     </View>
   );
 };

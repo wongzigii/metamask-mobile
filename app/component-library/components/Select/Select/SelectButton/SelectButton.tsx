@@ -18,6 +18,8 @@ const SelectButton: React.FC<SelectButtonProps> = ({
   style,
   isDisabled = false,
   isDanger = false,
+  hitSlop,
+  onPress,
   ...props
 }) => {
   const { styles } = useStyles(styleSheet, {
@@ -30,6 +32,7 @@ const SelectButton: React.FC<SelectButtonProps> = ({
       disabled={isDisabled}
       activeOpacity={1}
       style={styles.base}
+      onPress={onPress}
     >
       <View style={styles.menuOptionWrapper}>
         <MenuOption {...props} />

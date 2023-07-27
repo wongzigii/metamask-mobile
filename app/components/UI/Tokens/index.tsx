@@ -90,6 +90,9 @@ import {
 import { selectDetectedTokens } from '../../../selectors/tokensController';
 import { selectContractExchangeRates } from '../../../selectors/tokenRatesController';
 import { selectUseTokenDetection } from '../../../selectors/preferencesController';
+import SelectButton from '../../../component-library/components/Select/Select/SelectButton/SelectButton';
+import MenuOptions from '../../../component-library/components/Menu/MenuOptions/MenuOptions';
+import { MenuOptionProps } from '../../../component-library/components/Menu/MenuOptions/MenuOption/MenuOption.types';
 
 const Tokens: React.FC<TokensI> = ({ tokens }) => {
   const { colors, themeAppearance } = useTheme();
@@ -523,6 +526,11 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
   const onActionSheetPress = (index: number) =>
     index === 0 ? removeToken() : null;
 
+  const options: MenuOptionProps[] = [
+    { label: 'label1' },
+    { label: 'label2' },
+    { label: 'label3' },
+  ];
   return (
     <View
       style={styles.wrapper}
@@ -538,6 +546,8 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
         onPress={onActionSheetPress}
         theme={themeAppearance}
       />
+      <SelectButton label="label" description="description" />
+      <MenuOptions options={options} isMultiSelect />
     </View>
   );
 };

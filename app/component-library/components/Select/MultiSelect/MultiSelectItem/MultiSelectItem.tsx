@@ -24,6 +24,7 @@ const MultiSelectItem: React.FC<MultiSelectItemProps> = ({
   isDisabled = false,
   children,
   gap = DEFAULT_MULTISELECTITEM_GAP,
+  hitSlop,
   ...props
 }) => {
   const { styles } = useStyles(styleSheet, { style, gap, isDisabled });

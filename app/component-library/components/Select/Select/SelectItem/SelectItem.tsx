@@ -22,6 +22,7 @@ const SelectItem: React.FC<SelectItemProps> = ({
   isDisabled = false,
   children,
   onPress,
+  hitSlop,
   ...props
 }) => {
   const { styles } = useStyles(styleSheet, { style, isDisabled });

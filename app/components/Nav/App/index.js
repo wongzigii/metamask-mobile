@@ -226,6 +226,8 @@ const App = ({ userLoggedIn }) => {
   const [animationPlayed, setAnimationPlayed] = useState(false);
   const { colors } = useTheme();
   const { toastRef } = useContext(ToastContext);
+  const sdkInit = useRef(false);
+  const [onboarded, setOnboarded] = useState(false);
   const dispatch = useDispatch();
   const triggerSetCurrentRoute = (route) => {
     dispatch(setCurrentRoute(route));
@@ -346,17 +348,17 @@ const App = ({ userLoggedIn }) => {
   }, []);
 
   useEffect(() => {
-    if (navigator) {
+    if (navigator && !sdkInit.current && onboarded) {
       SDKConnect.getInstance()
         .init({ navigation: navigator })
+        .then(() => {
+          sdkInit.current = true;
+        })
         .catch((err) => {
           console.error(`Cannot initialize SDKConnect`, err);
         });
     }
-    return () => {
-      SDKConnect.getInstance().unmount();
-    };
-  }, [navigator]);
+  }, [navigator, onboarded]);
 
   useEffect(() => {
     if (isWC2Enabled) {
@@ -369,6 +371,7 @@ const App = ({ userLoggedIn }) => {
   useEffect(() => {
     async function checkExisting() {
       const existingUser = await AsyncStorage.getItem(EXISTING_USER);
+      setOnboarded(!!existingUser);
       const route = !existingUser
         ? Routes.ONBOARDING.ROOT_NAV
         : Routes.ONBOARDING.LOGIN;

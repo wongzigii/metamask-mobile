@@ -38,7 +38,7 @@ const styleSheet = (params: {
       } as ViewStyle,
       style,
     ) as ViewStyle,
-    menuOptionWrapper: {
+    contentWrapper: {
       flex: 1,
     },
     iconWrapper: {

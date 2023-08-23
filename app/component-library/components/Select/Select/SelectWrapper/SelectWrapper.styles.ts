@@ -5,7 +5,7 @@ import { StyleSheet, ViewStyle } from 'react-native';
 import { Theme } from '../../../../../util/theme/models';
 
 /**
- * Style sheet function for SelectList component.
+ * Style sheet function for SelectWrapper component.
  *
  * @param params Style sheet params.
  * @param params.theme App theme from ThemeContext.
@@ -16,12 +16,7 @@ const styleSheet = (params: { theme: Theme; vars: any }) => {
   const { vars } = params;
   const { style } = vars;
   return StyleSheet.create({
-    base: Object.assign(
-      {
-        padding: 12,
-      } as ViewStyle,
-      style,
-    ) as ViewStyle,
+    base: Object.assign({} as ViewStyle, style) as ViewStyle,
   });
 };
 

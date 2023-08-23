@@ -6,9 +6,8 @@ import { TouchableOpacity, View } from 'react-native';
 
 // External dependencies.
 import { useStyles } from '../../../../hooks';
-import Text, { TextVariant } from '../../../Texts/Text';
 import Icon, { IconName, IconSize } from '../../../Icons/Icon';
-import MenuOption from '../../../Menu/MenuOptions/MenuOption/MenuOption';
+import SelectOptionContent from '../SelectOption/foundation/SelectOptionContent/SelectOptionContent';
 
 // Internal dependencies.
 import styleSheet from './SelectButton.styles';
@@ -18,7 +17,6 @@ const SelectButton: React.FC<SelectButtonProps> = ({
   style,
   isDisabled = false,
   isDanger = false,
-  hitSlop,
   onPress,
   ...props
 }) => {
@@ -34,8 +32,8 @@ const SelectButton: React.FC<SelectButtonProps> = ({
       style={styles.base}
       onPress={onPress}
     >
-      <View style={styles.menuOptionWrapper}>
-        <MenuOption {...props} />
+      <View style={styles.contentWrapper}>
+        <SelectOptionContent {...props} />
       </View>
       <View style={styles.iconWrapper}>
         <Icon name={IconName.ArrowDown} size={IconSize.Sm} />

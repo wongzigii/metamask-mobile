@@ -19,7 +19,6 @@ const Select: React.FC<SelectProps> = ({
   label,
   description,
   options,
-  isMultiSelect,
 }) => {
   const { styles } = useStyles(styleSheet, { style });
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -39,11 +38,7 @@ const Select: React.FC<SelectProps> = ({
       {isMenuOpened && (
         <BottomSheet ref={bottomSheetRef} onClose={onMenuClose}>
           <MenuHeader>{label}</MenuHeader>
-          <MenuBody
-            description={description}
-            options={options}
-            isMultiSelect={isMultiSelect}
-          />
+          <MenuBody description={description} options={options} />
         </BottomSheet>
       )}
     </>

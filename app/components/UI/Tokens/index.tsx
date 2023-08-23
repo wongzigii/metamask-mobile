@@ -90,8 +90,8 @@ import {
 import { selectDetectedTokens } from '../../../selectors/tokensController';
 import { selectContractExchangeRates } from '../../../selectors/tokenRatesController';
 import { selectUseTokenDetection } from '../../../selectors/preferencesController';
-import Select from '../../../component-library/components/Select/Select/Select';
-import { MenuOptionProps } from '../../../component-library/components/Menu/MenuOptions/MenuOption/MenuOption.types';
+import SelectOption from '../../../component-library/components/Select/Select/SelectOption/SelectOption';
+import SelectWrapper from '../../../component-library/components/Select/Select/SelectWrapper/SelectWrapper';
 
 const Tokens: React.FC<TokensI> = ({ tokens }) => {
   const { colors } = useTheme();
@@ -526,11 +526,6 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
   const onActionSheetPress = (index: number) =>
     index === 0 ? removeToken() : null;
 
-  const options: MenuOptionProps[] = [
-    { label: 'label1' },
-    { label: 'label2' },
-    { label: 'label3' },
-  ];
   return (
     <View
       style={styles.wrapper}
@@ -545,12 +540,11 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
         destructiveButtonIndex={0}
         onPress={onActionSheetPress}
       />
-      <Select
-        label="label"
-        description="description"
-        options={options}
-        isMultiSelect
-      />
+      <SelectWrapper placeholder={'Hello'}>
+        <SelectOption label="label1" />
+        <SelectOption label="label2" />
+        <SelectOption label="label3" />
+      </SelectWrapper>
     </View>
   );
 };

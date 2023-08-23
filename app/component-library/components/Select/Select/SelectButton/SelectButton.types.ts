@@ -2,14 +2,15 @@
 import { TouchableOpacityProps } from 'react-native';
 
 // External dependencies.
-import { MenuOptionProps } from '../../../Menu/MenuOptions/MenuOption/MenuOption.types';
+import { SelectOptionContentProps } from '../SelectOption/foundation/SelectOptionContent/SelectOptionContent.types';
 
 /**
  * SelectButton component props.
  */
 export interface SelectButtonProps
-  extends Omit<MenuOptionProps, 'hitSlop'>,
+  extends SelectOptionContentProps,
     TouchableOpacityProps {
+  isDisabled?: boolean;
   isDanger?: boolean;
 }
 

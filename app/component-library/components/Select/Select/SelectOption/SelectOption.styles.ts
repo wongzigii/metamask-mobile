@@ -1,28 +1,31 @@
 // Third party dependencies.
 import { StyleSheet, ViewStyle } from 'react-native';
 
-// External dependencies.
-import { Theme } from '../../../../util/theme/models';
+// Internal dependencies.
+import { SelectOptionStyleSheetVars } from './SelectOption.types';
 
 /**
- * Style sheet function for MenuOptions component.
+ * Style sheet function for SelectOption component.
  *
  * @param params Style sheet params.
  * @param params.theme App theme from ThemeContext.
  * @param params.vars Inputs that the style sheet depends on.
  * @returns StyleSheet object.
  */
-const styleSheet = (params: { theme: Theme; vars: any }) => {
+const styleSheet = (params: { vars: SelectOptionStyleSheetVars }) => {
   const { vars } = params;
   const { style } = vars;
   return StyleSheet.create({
     base: Object.assign(
       {
         flexDirection: 'row',
-        margin: -8,
+        alignItems: 'center',
       } as ViewStyle,
       style,
     ) as ViewStyle,
+    childrenWrapper: {
+      flex: 1,
+    },
   });
 };
 

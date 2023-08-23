@@ -540,11 +540,29 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
         destructiveButtonIndex={0}
         onPress={onActionSheetPress}
       />
-      <SelectWrapper placeholder={'Hello'}>
+      {/* <SelectWrapper placeholder={'Hello'}>
+        <SelectOption label="label1" />
+        <SelectOption label="label2" />
+        <SelectOption label="label3" />
+      </SelectWrapper> */}
+
+      <SelectWrapper
+        value={{ label: 'value label', description: 'value description' }}
+      >
         <SelectOption label="label1" />
         <SelectOption label="label2" />
         <SelectOption label="label3" />
       </SelectWrapper>
+
+      {/* <SelectWrapper
+        trigger={
+          <Text style={styles.tokensDetectedText}>{'Custom trigger'}</Text>
+        }
+      >
+        <SelectOption label="label1" />
+        <SelectOption label="label2" />
+        <SelectOption label="label3" />
+      </SelectWrapper> */}
     </View>
   );
 };

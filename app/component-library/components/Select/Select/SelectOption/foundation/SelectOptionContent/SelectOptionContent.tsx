@@ -18,7 +18,6 @@ const SelectOptionContent: React.FC<SelectOptionContentProps> = ({
   description,
   startAccessory,
   endAccessory,
-  ...props
 }) => {
   const { styles } = useStyles(styleSheet, {
     style,
@@ -42,14 +41,14 @@ const SelectOptionContent: React.FC<SelectOptionContentProps> = ({
     );
   };
   return (
-    <>
+    <View style={styles.base}>
       {startAccessory && <View>{startAccessory}</View>}
       <View style={styles.info}>
         {label && renderLabel()}
         {description && renderDescription()}
       </View>
       {endAccessory && <View>{endAccessory}</View>}
-    </>
+    </View>
   );
 };
 

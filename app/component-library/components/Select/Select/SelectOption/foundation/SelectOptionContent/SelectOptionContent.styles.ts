@@ -1,5 +1,5 @@
 // Third party dependencies.
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 
 // Internal dependencies.
 import { SelectOptionContentStyleSheetVars } from './SelectOptionContent.types';
@@ -16,9 +16,12 @@ const styleSheet = (params: { vars: SelectOptionContentStyleSheetVars }) => {
   const { vars } = params;
   const { style } = vars;
   return StyleSheet.create({
-    childrenWrapper: {
-      flex: 1,
-    },
+    base: Object.assign(
+      {
+        flexDirection: 'row',
+      } as ViewStyle,
+      style,
+    ) as ViewStyle,
     info: {
       flex: 1,
     },

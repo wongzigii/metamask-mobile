@@ -40,7 +40,7 @@ const SelectWrapper: React.FC<SelectWrapperProps> = ({
   return (
     <View style={styles.base}>
       {trigger ? (
-        { trigger }
+        trigger
       ) : (
         <SelectButton {...selectButtonContent} onPress={onMenuOpen} />
       )}

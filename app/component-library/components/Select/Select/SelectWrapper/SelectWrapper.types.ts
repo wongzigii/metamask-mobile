@@ -10,5 +10,7 @@ import { SelectOptionContentProps } from '../SelectOption/foundation/SelectOptio
 export interface SelectWrapperProps extends ViewProps {
   placeholder?: string;
   value?: SelectOptionContentProps;
-  trigger?: React.ReactNode;
+  triggerComponent?: React.ReactNode;
+  isOpen?: boolean;
+  onChange?: () => void;
 }

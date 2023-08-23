@@ -92,6 +92,7 @@ import { selectContractExchangeRates } from '../../../selectors/tokenRatesContro
 import { selectUseTokenDetection } from '../../../selectors/preferencesController';
 import SelectOption from '../../../component-library/components/Select/Select/SelectOption/SelectOption';
 import SelectWrapper from '../../../component-library/components/Select/Select/SelectWrapper/SelectWrapper';
+import SelectOptionContent from '../../../component-library/components/Select/Select/SelectOption/foundation/SelectOptionContent/SelectOptionContent';
 
 const Tokens: React.FC<TokensI> = ({ tokens }) => {
   const { colors } = useTheme();
@@ -546,16 +547,16 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
         <SelectOption label="label3" />
       </SelectWrapper> */}
 
-      <SelectWrapper
+      {/* <SelectWrapper
         value={{ label: 'value label', description: 'value description' }}
       >
         <SelectOption label="label1" />
         <SelectOption label="label2" />
         <SelectOption label="label3" />
-      </SelectWrapper>
+      </SelectWrapper> */}
 
       {/* <SelectWrapper
-        trigger={
+        triggerComponent={
           <Text style={styles.tokensDetectedText}>{'Custom trigger'}</Text>
         }
       >
@@ -563,6 +564,11 @@ const Tokens: React.FC<TokensI> = ({ tokens }) => {
         <SelectOption label="label2" />
         <SelectOption label="label3" />
       </SelectWrapper> */}
+      <SelectOptionContent
+        label="content label"
+        description="content description"
+      />
+      {/* <SelectOption label="option label" description="option description"/> */}
     </View>
   );
 };

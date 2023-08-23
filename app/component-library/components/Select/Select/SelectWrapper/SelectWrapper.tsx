@@ -18,19 +18,23 @@ const SelectWrapper: React.FC<SelectWrapperProps> = ({
   style,
   placeholder = '',
   value,
-  trigger,
+  triggerComponent,
+  isOpen = false,
+  onChange,
   children,
 }) => {
   const { styles } = useStyles(styleSheet, { style });
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isMenuOpened, setIsMenuOpened] = useState(isOpen);
   const bottomSheetRef = useRef<BottomSheetRef>(null);
 
   const onMenuOpen = useCallback(() => {
     setIsMenuOpened(true);
+    onChange?.();
   }, [setIsMenuOpened]);
 
   const onMenuClose = useCallback(() => {
     setIsMenuOpened(false);
+    onChange?.();
   }, [setIsMenuOpened]);
 
   const selectButtonContent: SelectOptionContentProps = value
@@ -39,8 +43,8 @@ const SelectWrapper: React.FC<SelectWrapperProps> = ({
 
   return (
     <View style={styles.base}>
-      {trigger ? (
-        trigger
+      {triggerComponent ? (
+        triggerComponent
       ) : (
         <SelectButton {...selectButtonContent} onPress={onMenuOpen} />
       )}

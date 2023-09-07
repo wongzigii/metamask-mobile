@@ -96,9 +96,8 @@ module.exports = {
     },
     'android.release': {
       type: 'android.apk',
-      binaryPath:
-        'android/app/build/outputs/apk/prod/release/app-prod-release.apk',
-      build: "METAMASK_ENVIRONMENT='production' yarn test:e2e:android",
+      binaryPath: 'android/app/build/outputs/apk/qa/release/app-qa-release.apk',
+      build: "METAMASK_ENVIRONMENT='qa' yarn build:android:qa:e2e",
     },
     'android.qa': {
       type: 'android.apk',

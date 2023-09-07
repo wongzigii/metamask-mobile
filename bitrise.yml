@@ -312,7 +312,7 @@ workflows:
             - destination: android/keystores/internalRelease.keystore
       - script@1: 
           inputs:
-            - content: |-
+          - content: |-
             #!/usr/bin/env bash
             METAMASK_ENVIRONMENT='production' yarn test:e2e:android --testNamePattern='Smoke'
           title: Detox Build & Test

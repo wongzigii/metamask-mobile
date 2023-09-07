@@ -10,9 +10,9 @@ module.exports = {
     },
     retries: 2,
   },
-  
+
   artifacts: {
-    rootDir: "./artifacts/screenshots",
+    rootDir: './artifacts/screenshots',
     plugins: {
       screenshot: {
         shouldTakeAutomaticSnapshots: true,
@@ -20,10 +20,10 @@ module.exports = {
         takeWhen: {
           testStart: false,
           testDone: false,
-        }
+        },
       },
     },
-  }, 
+  },
   configurations: {
     'ios.sim.debug': {
       device: 'ios.simulator',
@@ -98,7 +98,7 @@ module.exports = {
       type: 'android.apk',
       binaryPath:
         'android/app/build/outputs/apk/prod/release/app-prod-release.apk',
-      build: "METAMASK_ENVIRONMENT='production' yarn build:android:release:e2e",
+      build: "METAMASK_ENVIRONMENT='production' yarn test:e2e:android",
     },
     'android.qa': {
       type: 'android.apk',

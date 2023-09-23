@@ -1,6 +1,5 @@
 'use strict';
 
-import { Regression } from '../../tags';
 import TestHelpers from '../../helpers';
 import AmountView from '../../pages/AmountView';
 import SendView from '../../pages/SendView';

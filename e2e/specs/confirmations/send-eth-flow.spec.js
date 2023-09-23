@@ -16,7 +16,7 @@ import WalletActionsModal from '../../pages/modals/WalletActionsModal';
 
 const MYTH_ADDRESS = '0x1FDb169Ef12954F20A15852980e1F0C122BfC1D6';
 
-describe(Regression('Send ETH Tests'), () => {
+describe('Send ETH Tests', () => {
   let ganache;
   beforeAll(async () => {
     jest.setTimeout(150000);

@@ -13,8 +13,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		153C1ABB2217BCDC0088EFE0 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153C1A742217BCDC0088EFE0 /* JavaScriptCore.framework */; };
-		153F84CA2319B8FD00C19B63 /* Branch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F84C92319B8DB00C19B63 /* Branch.framework */; };
-		153F84CB2319B8FD00C19B63 /* Branch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 153F84C92319B8DB00C19B63 /* Branch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		158B063B211A72F500DF3C74 /* InpageBridgeWeb3.js in Resources */ = {isa = PBXBuildFile; fileRef = 158B0639211A72F500DF3C74 /* InpageBridgeWeb3.js */; };
 		15ACC9FB226555820063978B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		15AD28A921B7CFD9005DEB23 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 15FDD86021B76461006B7C35 /* release.xcconfig */; };
@@ -50,7 +48,6 @@
 		B339FF08289ABD70001B89FB /* libRCTAesForked.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 650F2B9C24DC5FEC00C3B9C4 /* libRCTAesForked.a */; };
 		B339FF09289ABD70001B89FB /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153C1A742217BCDC0088EFE0 /* JavaScriptCore.framework */; };
 		B339FF0B289ABD70001B89FB /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F7795722A1B79400B1DF8C /* Mixpanel.framework */; };
-		B339FF0C289ABD70001B89FB /* Branch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153F84C92319B8DB00C19B63 /* Branch.framework */; };
 		B339FF10289ABD70001B89FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		B339FF11289ABD70001B89FB /* InpageBridgeWeb3.js in Resources */ = {isa = PBXBuildFile; fileRef = 158B0639211A72F500DF3C74 /* InpageBridgeWeb3.js */; };
 		B339FF12289ABD70001B89FB /* Metamask.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15D158EC210BD8C8006982B5 /* Metamask.ttf */; };
@@ -83,7 +80,6 @@
 		B339FF2D289ABD70001B89FB /* EuclidCircularB-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8DE9C5BC0714D648276E123 /* EuclidCircularB-Semibold.otf */; };
 		B339FF2E289ABD70001B89FB /* EuclidCircularB-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9499B01ECAC44DA29AC44E80 /* EuclidCircularB-SemiboldItalic.otf */; };
 		B339FF31289ABD70001B89FB /* Mixpanel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15F7795722A1B79400B1DF8C /* Mixpanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B339FF32289ABD70001B89FB /* Branch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 153F84C92319B8DB00C19B63 /* Branch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B339FF3C289ABF2C001B89FB /* MetaMask-QA-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B339FEA72899852C001B89FB /* MetaMask-QA-Info.plist */; };
 		B638844E306CAE9147B52C85 /* libPods-MetaMask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FF04C201CE95ED7EEEA82 /* libPods-MetaMask.a */; };
 		BF39E5BAE0F34F9091FF6AC0 /* EuclidCircularB-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8DE9C5BC0714D648276E123 /* EuclidCircularB-Semibold.otf */; };
@@ -91,6 +87,8 @@
 		CF9895772A3B49BE00B4C9B5 /* RCTMinimizer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9895762A3B49BE00B4C9B5 /* RCTMinimizer.m */; };
 		CF9895782A3B49BE00B4C9B5 /* RCTMinimizer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9895762A3B49BE00B4C9B5 /* RCTMinimizer.m */; };
 		CF98DA9C28D9FEB700096782 /* RCTScreenshotDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = CF98DA9B28D9FEB700096782 /* RCTScreenshotDetect.m */; };
+		CFA3052C2ACDBD5700A161A2 /* BranchSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA305212ACDBD4500A161A2 /* BranchSDK.framework */; };
+		CFA3052D2ACDBD5700A161A2 /* BranchSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFA305212ACDBD4500A161A2 /* BranchSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFD8DFC828EDD4C800CC75F6 /* RCTScreenshotDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = CF98DA9B28D9FEB700096782 /* RCTScreenshotDetect.m */; };
 		D171C39A8BD44DBEB6B68480 /* EuclidCircularB-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42CBA652072F4BE2A8B815C1 /* EuclidCircularB-MediumItalic.otf */; };
 		D45BF85DECACCB74EDCBE88A /* libPods-MetaMask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FF04C201CE95ED7EEEA82 /* libPods-MetaMask.a */; };
@@ -103,20 +101,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		153F84C82319B8DB00C19B63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 153F84C42319B8DA00C19B63 /* BranchSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E298D0521C73D1B800589D22;
-			remoteInfo = Branch;
-		};
-		153F84CC2319B8FD00C19B63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 153F84C42319B8DA00C19B63 /* BranchSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E298D0511C73D1B800589D22;
-			remoteInfo = Branch;
-		};
 		15F7795622A1B79400B1DF8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 15F7794F22A1B79400B1DF8C /* Mixpanel.xcodeproj */;
@@ -166,12 +150,68 @@
 			remoteGlobalIDString = 7C170C291A4A02F500D9E0F2;
 			remoteInfo = Mixpanel;
 		};
-		B339FEFE289ABD70001B89FB /* PBXContainerItemProxy */ = {
+		CFA3050C2ACDBD3100A161A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 153F84C42319B8DA00C19B63 /* BranchSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E298D0511C73D1B800589D22;
-			remoteInfo = Branch;
+			containerPortal = 15F7794F22A1B79400B1DF8C /* Mixpanel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8631AA1A2739ED8D0012D7AF;
+			remoteInfo = HelloMixpanelWatch;
+		};
+		CFA3050E2ACDBD3100A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15F7794F22A1B79400B1DF8C /* Mixpanel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8631AA1D2739ED8E0012D7AF;
+			remoteInfo = "HelloMixpanelWatch WatchKit App";
+		};
+		CFA305102ACDBD3100A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15F7794F22A1B79400B1DF8C /* Mixpanel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8631AA2B2739ED910012D7AF;
+			remoteInfo = "HelloMixpanelWatch WatchKit Extension";
+		};
+		CFA305202ACDBD4500A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F22101D2894A0DB00C5B190;
+			remoteInfo = BranchSDK;
+		};
+		CFA305222ACDBD4500A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F73EBF428ECE65400608601;
+			remoteInfo = "BranchSDK-static";
+		};
+		CFA305242ACDBD4500A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F79038C28B5765D003144CD;
+			remoteInfo = "BranchSDK-tvOS";
+		};
+		CFA305262ACDBD4500A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F22116F2894A9C000C5B190;
+			remoteInfo = TestHost;
+		};
+		CFA305282ACDBD4500A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F2211842894A9C100C5B190;
+			remoteInfo = TestHostTests;
+		};
+		CFA3052A2ACDBD4500A161A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F22118E2894A9C100C5B190;
+			remoteInfo = TestHostUITests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -183,7 +223,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				15F7795F22A1B7B500B1DF8C /* Mixpanel.framework in Embed Frameworks */,
-				153F84CB2319B8FD00C19B63 /* Branch.framework in Embed Frameworks */,
+				CFA3052D2ACDBD5700A161A2 /* BranchSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +235,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B339FF31289ABD70001B89FB /* Mixpanel.framework in Embed Frameworks */,
-				B339FF32289ABD70001B89FB /* Branch.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +255,6 @@
 		13EE4910D3BD408A8FCCA5D7 /* EuclidCircularB-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "EuclidCircularB-BoldItalic.otf"; path = "../app/fonts/EuclidCircularB-BoldItalic.otf"; sourceTree = "<group>"; };
 		15205D6221596AD90049EA93 /* MetaMask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MetaMask.entitlements; path = MetaMask/MetaMask.entitlements; sourceTree = "<group>"; };
 		153C1A742217BCDC0088EFE0 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		153F84C42319B8DA00C19B63 /* BranchSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BranchSDK.xcodeproj; path = "branch-ios-sdk/carthage-files/BranchSDK.xcodeproj"; sourceTree = "<group>"; };
 		158B0639211A72F500DF3C74 /* InpageBridgeWeb3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = InpageBridgeWeb3.js; path = ../app/core/InpageBridgeWeb3.js; sourceTree = "<group>"; };
 		159878012231DF67001748EC /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		15D158EC210BD8C8006982B5 /* Metamask.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Metamask.ttf; path = ../app/fonts/Metamask.ttf; sourceTree = "<group>"; };
@@ -270,6 +308,7 @@
 		CF9895762A3B49BE00B4C9B5 /* RCTMinimizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTMinimizer.m; path = MetaMask/NativeModules/RCTMinimizer/RCTMinimizer.m; sourceTree = "<group>"; };
 		CF98DA9A28D9FE7800096782 /* RCTScreenshotDetect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTScreenshotDetect.h; sourceTree = "<group>"; };
 		CF98DA9B28D9FEB700096782 /* RCTScreenshotDetect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTScreenshotDetect.m; sourceTree = "<group>"; };
+		CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BranchSDK.xcodeproj; path = "branch-ios-sdk/BranchSDK.xcodeproj"; sourceTree = "<group>"; };
 		D0CBAE789660472DB719C765 /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottie.a; sourceTree = "<group>"; };
 		D5FF0FF1DFB74B3C8BB99E09 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../app/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D9A37B5BF2914CF1B49EEF80 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../app/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -297,10 +336,10 @@
 				650F2B9D24DC5FF200C3B9C4 /* libRCTAesForked.a in Frameworks */,
 				153C1ABB2217BCDC0088EFE0 /* JavaScriptCore.framework in Frameworks */,
 				15F7795E22A1B7B500B1DF8C /* Mixpanel.framework in Frameworks */,
-				153F84CA2319B8FD00C19B63 /* Branch.framework in Frameworks */,
 				0FD509E0336BF221F6527B24 /* libPods-MetaMask.a in Frameworks */,
 				D45BF85DECACCB74EDCBE88A /* libPods-MetaMask.a in Frameworks */,
 				B638844E306CAE9147B52C85 /* libPods-MetaMask.a in Frameworks */,
+				CFA3052C2ACDBD5700A161A2 /* BranchSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +351,6 @@
 				B339FF08289ABD70001B89FB /* libRCTAesForked.a in Frameworks */,
 				B339FF09289ABD70001B89FB /* JavaScriptCore.framework in Frameworks */,
 				B339FF0B289ABD70001B89FB /* Mixpanel.framework in Frameworks */,
-				B339FF0C289ABD70001B89FB /* Branch.framework in Frameworks */,
 				DDB2D8FF8BDA806A38D61B1B /* libPods-MetaMask-QA.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,14 +396,6 @@
 			name = MetaMask;
 			sourceTree = "<group>";
 		};
-		153F84C52319B8DA00C19B63 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				153F84C92319B8DB00C19B63 /* Branch.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		15A2E5EF2100077400A1F331 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +415,9 @@
 				15F7795922A1B79400B1DF8C /* Mixpanel.framework */,
 				15F7795B22A1B79400B1DF8C /* Mixpanel.framework */,
 				15F7795D22A1B79400B1DF8C /* Mixpanel.framework */,
+				CFA3050D2ACDBD3100A161A2 /* HelloMixpanelWatch.app */,
+				CFA3050F2ACDBD3100A161A2 /* HelloMixpanelWatch WatchKit App.app */,
+				CFA305112ACDBD3100A161A2 /* HelloMixpanelWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -477,8 +510,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */,
 				650F2B9724DC5FEB00C3B9C4 /* RCTAesForked.xcodeproj */,
-				153F84C42319B8DA00C19B63 /* BranchSDK.xcodeproj */,
 				15F7794F22A1B79400B1DF8C /* Mixpanel.xcodeproj */,
 			);
 			name = Libraries;
@@ -543,6 +576,19 @@
 			name = RCTScreenshotDetect;
 			sourceTree = "<group>";
 		};
+		CFA305142ACDBD4500A161A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFA305212ACDBD4500A161A2 /* BranchSDK.framework */,
+				CFA305232ACDBD4500A161A2 /* BranchSDK.framework */,
+				CFA305252ACDBD4500A161A2 /* BranchSDK.framework */,
+				CFA305272ACDBD4500A161A2 /* TestHost.app */,
+				CFA305292ACDBD4500A161A2 /* TestHostTests.xctest */,
+				CFA3052B2ACDBD4500A161A2 /* TestHostUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,7 +609,6 @@
 			);
 			dependencies = (
 				15F7796122A1B7B500B1DF8C /* PBXTargetDependency */,
-				153F84CD2319B8FD00C19B63 /* PBXTargetDependency */,
 			);
 			name = MetaMask;
 			productName = "Hello World";
@@ -587,7 +632,6 @@
 			);
 			dependencies = (
 				B339FEFB289ABD70001B89FB /* PBXTargetDependency */,
-				B339FEFD289ABD70001B89FB /* PBXTargetDependency */,
 			);
 			name = "MetaMask-QA";
 			productName = "Hello World";
@@ -632,8 +676,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 153F84C52319B8DA00C19B63 /* Products */;
-					ProjectRef = 153F84C42319B8DA00C19B63 /* BranchSDK.xcodeproj */;
+					ProductGroup = CFA305142ACDBD4500A161A2 /* Products */;
+					ProjectRef = CFA305132ACDBD4500A161A2 /* BranchSDK.xcodeproj */;
 				},
 				{
 					ProductGroup = 15F7795022A1B79400B1DF8C /* Products */;
@@ -653,13 +697,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		153F84C92319B8DB00C19B63 /* Branch.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Branch.framework;
-			remoteRef = 153F84C82319B8DB00C19B63 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		15F7795722A1B79400B1DF8C /* Mixpanel.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -693,6 +730,69 @@
 			fileType = archive.ar;
 			path = libRCTAesForked.a;
 			remoteRef = 650F2B9B24DC5FEC00C3B9C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA3050D2ACDBD3100A161A2 /* HelloMixpanelWatch.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HelloMixpanelWatch.app;
+			remoteRef = CFA3050C2ACDBD3100A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA3050F2ACDBD3100A161A2 /* HelloMixpanelWatch WatchKit App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "HelloMixpanelWatch WatchKit App.app";
+			remoteRef = CFA3050E2ACDBD3100A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA305112ACDBD3100A161A2 /* HelloMixpanelWatch WatchKit Extension.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = "HelloMixpanelWatch WatchKit Extension.appex";
+			remoteRef = CFA305102ACDBD3100A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA305212ACDBD4500A161A2 /* BranchSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BranchSDK.framework;
+			remoteRef = CFA305202ACDBD4500A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA305232ACDBD4500A161A2 /* BranchSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BranchSDK.framework;
+			remoteRef = CFA305222ACDBD4500A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA305252ACDBD4500A161A2 /* BranchSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BranchSDK.framework;
+			remoteRef = CFA305242ACDBD4500A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA305272ACDBD4500A161A2 /* TestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestHost.app;
+			remoteRef = CFA305262ACDBD4500A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA305292ACDBD4500A161A2 /* TestHostTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TestHostTests.xctest;
+			remoteRef = CFA305282ACDBD4500A161A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA3052B2ACDBD4500A161A2 /* TestHostUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TestHostUITests.xctest;
+			remoteRef = CFA3052A2ACDBD4500A161A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -957,11 +1057,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		153F84CD2319B8FD00C19B63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Branch;
-			targetProxy = 153F84CC2319B8FD00C19B63 /* PBXContainerItemProxy */;
-		};
 		15F7796122A1B7B500B1DF8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Mixpanel;
@@ -971,11 +1066,6 @@
 			isa = PBXTargetDependency;
 			name = Mixpanel;
 			targetProxy = B339FEFC289ABD70001B89FB /* PBXContainerItemProxy */;
-		};
-		B339FEFD289ABD70001B89FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Branch;
-			targetProxy = B339FEFE289ABD70001B89FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -2,7 +2,6 @@
   "blockaid_banner": {
     "approval_farming_description": "Si vous approuvez cette demande, un tiers connu pour ses activités frauduleuses pourrait s’emparer de tous vos actifs.",
     "attribution": "Conseils de sécurité fournis par",
-    "attribution_link": "https://blockaid.me",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Si vous approuvez cette demande, quelqu’un pourrait s’emparer de vos actifs répertoriés sur Blur.",
     "deceptive_request_title": "Cette demande est trompeuse",
@@ -13,6 +12,7 @@
     "raw_signature_farming_description": "Si vous approuvez cette demande, vous risquez de perdre vos actifs.",
     "seaport_farming_description": "Si vous approuvez cette demande, quelqu’un pourrait s'emparer de vos actifs répertoriés sur OpenSea.",
     "see_details": "Voir les détails",
+    "does_not_look_right": "Something doesn’t look right?",
     "suspicious_request_title": "Cette demande est suspecte",
     "trade_order_farming_description": "Si vous approuvez cette demande, vous risquez de perdre vos actifs.",
     "transfer_farming_description": "Si vous approuvez cette demande, un tiers connu pour ses activités frauduleuses pourrait s’emparer de tous vos actifs.",
@@ -789,7 +789,8 @@
     "display_nft_media_desc": "L’affichage des médias et des données NFT expose votre adresse IP à OpenSea ou à d’autres fournisseurs de services tiers. La détection automatique des NFT dépend de cette fonctionnalité et ne sera pas disponible si cette option est désactivée.",
     "autodetect_nft_desc": "Laissez MetaMask ajouter les NFT que vous possédez en utilisant des services tiers (comme OpenSea). La détection automatique des NFT révèle votre adresse IP et l’adresse de votre compte à ces services. Si vous activez cette fonctionnalité, un lien pourrait être établi entre votre adresse IP et votre adresse Ethereum, et entrainer l’affichage de faux NFT déposés par des escrocs. Vous pouvez ajouter des jetons manuellement pour éviter ce risque.",
     "incoming_transactions_title": "Afficher les transactions entrantes",
-    "incoming_transactions_content": "Cela dépend du réseau que vous sélectionnez et qui exposera votre adresse Ethereum et votre adresse IP."
+    "incoming_transactions_content": "Cela dépend du réseau que vous sélectionnez et qui exposera votre adresse Ethereum et votre adresse IP.",
+    "display_nft_media_desc_new": "Displaying NFT media and data exposes your IP address to OpenSea or other third parties. NFT autodetection relies on this feature, and won't be available when turned off. If NFT media is fully located on IPFS, it can still be displayed even when this feature is turned off."
   },
   "sdk": {
     "disconnect_title": "Déconnecter tous les sites ?",
@@ -1353,6 +1354,7 @@
     "learn_more": "En savoir plus",
     "learn_more_url": "https://metamask.zendesk.com/hc/en-us/articles/4417500466971",
     "switch_network": "Changer de réseau",
+    "switch": "Changer",
     "new_network": "Nouveau réseau ajouté",
     "network_name": "Réseau {{networkName}}",
     "network_added": " est maintenant disponible dans le sélecteur de réseau.",
@@ -1869,7 +1871,8 @@
   "fiat_on_ramp_aggregator": {
     "onboarding": {
       "what_to_expect": "À quoi s’attendre",
-      "benefits": "Des frais de transaction réduits et prise en charge de nombreux réseaux, jetons et méthodes de paiement",
+      "quotes": "Our buy crypto feature aggregates quotes from integrated vendors, providing quotes from those sources to get crypto directly into your wallet with no waiting period.",
+      "benefits": "Fewer gas fees to pay, and numerous networks, tokens, and payment methods supported",
       "get_started": "Commencer"
     },
     "payment_method": {
@@ -1913,6 +1916,7 @@
     "select_region_currency": "Sélectionnez la devise nationale",
     "no_tokens_match": "Aucun jeton correspondant à vos critères de recherche : {{searchString}}",
     "no_currency_match": "Aucune devise correspondant à vos critères de recherche : {{searchString}}",
+    "compare_rates": "Compare rates from these providers. Quotes are sorted by overall price.",
     "pay_with": "Payer avec",
     "buy_with": "Acheter avec {{provider}}",
     "minimum": "Le dépôt minimum est de",

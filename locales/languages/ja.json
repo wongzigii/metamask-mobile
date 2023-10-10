@@ -2,7 +2,6 @@
   "blockaid_banner": {
     "approval_farming_description": "このリクエストを承認すると、詐欺が判明しているサードパーティに資産をすべて奪われる可能性があります。",
     "attribution": "セキュリティアドバイスの提供元:",
-    "attribution_link": "https://blockaid.me",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "このリクエストを承認すると、Blurに登録されている資産を誰かに盗まれる可能性があります。",
     "deceptive_request_title": "これは虚偽のリクエストです",
@@ -13,6 +12,7 @@
     "raw_signature_farming_description": "このリクエストを承認すると、資産を失う可能性があります。",
     "seaport_farming_description": "このリクエストを承認すると、OpenSeaに登録されている資産を誰かに盗まれる可能性があります。",
     "see_details": "詳細を表示",
+    "does_not_look_right": "Something doesn’t look right?",
     "suspicious_request_title": "これは不審なリクエストです",
     "trade_order_farming_description": "このリクエストを承認すると、資産を失う可能性があります。",
     "transfer_farming_description": "このリクエストを承認すると、詐欺が判明しているサードパーティに資産をすべて奪われます。",
@@ -789,7 +789,8 @@
     "display_nft_media_desc": "NFTのメディアとデータを表示した場合、IPアドレスがOpenSeaをはじめとするサードパーティに公開されます。NFTの自動検出はこの機能に依存しており、この設定を無効にすると利用できなくなります。",
     "autodetect_nft_desc": "MetaMaskが、サードパーティサービス (例: OpenSea) を使って、ユーザーが所有するNFTを追加することを許可します。NFTの自動検出機能を利用すると、ユーザーのIPとアカウントアドレスがこれらのサービスに公開されます。この機能を有効にした場合、ユーザーのIPアドレスとイーサリアムアドレスが紐付けられ、詐欺師によりエアドロップされた偽のNFTが表示される可能性があります。このリスクを回避するため、手動でトークンを追加することもできます。",
     "incoming_transactions_title": "受信トランザクションを表示",
-    "incoming_transactions_content": "これは、ユーザーの選択するネットワークに依存し、イーサリアムアドレスおよびIPアドレスが公開されます。"
+    "incoming_transactions_content": "これは、ユーザーの選択するネットワークに依存し、イーサリアムアドレスおよびIPアドレスが公開されます。",
+    "display_nft_media_desc_new": "Displaying NFT media and data exposes your IP address to OpenSea or other third parties. NFT autodetection relies on this feature, and won't be available when turned off. If NFT media is fully located on IPFS, it can still be displayed even when this feature is turned off."
   },
   "sdk": {
     "disconnect_title": "すべてのサイトとの接続を解除しますか？",
@@ -1353,6 +1354,7 @@
     "learn_more": "詳細",
     "learn_more_url": "https://metamask.zendesk.com/hc/en-us/articles/4417500466971",
     "switch_network": "ネットワークに切り替える",
+    "switch": "切り替える",
     "new_network": "新しいネットワークが追加されました",
     "network_name": "{{networkName}}ネットワーク",
     "network_added": "がネットワークセレクターで利用可能になりました。",
@@ -1869,7 +1871,8 @@
   "fiat_on_ramp_aggregator": {
     "onboarding": {
       "what_to_expect": "今後の流れ",
-      "benefits": "ガス代が安く、数々のネットワーク、トークン、支払方法がサポートされています",
+      "quotes": "Our buy crypto feature aggregates quotes from integrated vendors, providing quotes from those sources to get crypto directly into your wallet with no waiting period.",
+      "benefits": "Fewer gas fees to pay, and numerous networks, tokens, and payment methods supported",
       "get_started": "開始"
     },
     "payment_method": {
@@ -1913,6 +1916,7 @@
     "select_region_currency": "地域の通貨を選択",
     "no_tokens_match": "「{{searchString}}」に一致するトークンがありません",
     "no_currency_match": "「{{searchString}}」に一致する通貨がありません",
+    "compare_rates": "Compare rates from these providers. Quotes are sorted by overall price.",
     "pay_with": "支払方法:",
     "buy_with": "{{provider}}で購入",
     "minimum": "最低入金額は",

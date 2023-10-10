@@ -2,7 +2,6 @@
   "blockaid_banner": {
     "approval_farming_description": "이 요청을 승인하면 스캠을 목적으로 하는 타사가 회원님의 자산을 모두 가져갈 수 있습니다.",
     "attribution": "보안 권고 제공처:",
-    "attribution_link": "https://blockaid.me",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "이 요청을 승인하면 Blur에 등록된 회원님의 자산을 타인이 훔칠 수 있습니다.",
     "deceptive_request_title": "사기성 요청입니다",
@@ -13,6 +12,7 @@
     "raw_signature_farming_description": "이 요청을 승인하면, 자산을 잃을 수 있습니다.",
     "seaport_farming_description": "이 요청을 승인하면 OpenSea에 등록된 회원님의 자산을 타인이 훔칠 수 있습니다.",
     "see_details": "세부 정보 보기",
+    "does_not_look_right": "Something doesn’t look right?",
     "suspicious_request_title": "의심스러운 요청입니다",
     "trade_order_farming_description": "이 요청을 승인하면, 자산을 잃을 수 있습니다.",
     "transfer_farming_description": "이 요청을 승인하면 스캠을 목적으로 하는 타사가 회원님의 자산을 모두 가져가게 됩니다.",
@@ -789,7 +789,8 @@
     "display_nft_media_desc": "NFT 미디어와 데이터를 표시하면 IP 주소가 OpenSea나 기타 제3자에게 노출될 수 있습니다. NFT 자동 감지는 이 기능을 사용하며, 이 기능이 꺼져 있는 경우 사용할 수 없습니다.",
     "autodetect_nft_desc": "MetaMask가 타사 서비스(예: OpenSea)를 이용하여 회원님의 NFT를 추가할 수 있도록 합니다. NFT를 자동 감지하면 이러한 서비스에 IP와 계정 주소가 노출됩니다. 이 기능을 켜면 IP 주소가 이더리움 주소와 연결되고 사기꾼이 에어드랍한 가짜 NFT가 표시될 수 있습니다. 이러한 위험을 피하기 위해 수동으로 토큰을 추가할 수 있습니다.",
     "incoming_transactions_title": "수신 트랜잭션 표시",
-    "incoming_transactions_content": "IP 주소이는 선택한 네트워크에 따라 달라지며, 네트워크에는 이더리움 주소와 IP 주소가 노출됩니다."
+    "incoming_transactions_content": "IP 주소이는 선택한 네트워크에 따라 달라지며, 네트워크에는 이더리움 주소와 IP 주소가 노출됩니다.",
+    "display_nft_media_desc_new": "Displaying NFT media and data exposes your IP address to OpenSea or other third parties. NFT autodetection relies on this feature, and won't be available when turned off. If NFT media is fully located on IPFS, it can still be displayed even when this feature is turned off."
   },
   "sdk": {
     "disconnect_title": "모든 사이트를 연결 해제할까요?",
@@ -1353,6 +1354,7 @@
     "learn_more": "더 보기",
     "learn_more_url": "https://metamask.zendesk.com/hc/en-us/articles/4417500466971",
     "switch_network": "네트워크 전환",
+    "switch": "전환",
     "new_network": "신규 네트워크 추가됨",
     "network_name": "{{networkName}} 네트워크",
     "network_added": " 를 네트워크 셀렉터에서 사용할 수 있습니다.",
@@ -1869,7 +1871,8 @@
   "fiat_on_ramp_aggregator": {
     "onboarding": {
       "what_to_expect": "소개",
-      "benefits": "가스 비용이 저렴하면서 수많은 네트워크, 토큰 및 지불 방법이 지원됩니다.",
+      "quotes": "Our buy crypto feature aggregates quotes from integrated vendors, providing quotes from those sources to get crypto directly into your wallet with no waiting period.",
+      "benefits": "Fewer gas fees to pay, and numerous networks, tokens, and payment methods supported",
       "get_started": "지금 시작하세요"
     },
     "payment_method": {
@@ -1913,6 +1916,7 @@
     "select_region_currency": "지역 통화 선택",
     "no_tokens_match": "“{{searchString}}”(와)과 일치하는 토큰이 없습니다",
     "no_currency_match": "“{{searchString}}”(와)과 일치하는 통화가 없습니다",
+    "compare_rates": "Compare rates from these providers. Quotes are sorted by overall price.",
     "pay_with": "결제 수단:",
     "buy_with": "결제 수단: {{provider}}",
     "minimum": "최소 예치 금액:",
